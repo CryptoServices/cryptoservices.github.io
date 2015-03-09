@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "OpenSSL Audit"
-date:   2015-03-05 16:56:07
+date:   2015-03-09 16:56:07
 categories: openssl
 excerpt: "We're excited to announce that as part of the <a href='http://www.linuxfoundation.org/programs/core-infrastructure-initiative'>Linux Foundation's Core Infrastructure Initiative</a>, and organized by the <a href='https://opencryptoaudit.org/'>Open Crypto Audit Project</a>, Cryptography Services will be conducting an audit of OpenSSL. This is an amazing opportunity to dive deeply into one of the pieces of software that so much of the world relies on, and we're honored to have been chosen to conduct it."
 ---
