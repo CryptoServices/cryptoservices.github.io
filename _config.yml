@@ -12,4 +12,4 @@ twitter_username: NCCCrypto
 github_username:  CryptoServices
 
 # Build settings
-markdown: kramdown
+markdown: redcarpet #kramdown
