@@ -13,9 +13,9 @@ excerpt: Florian Weimer from the Red Hat Product Security team has just released
 
 A team of researchers ran an attack for nine months, and from 4.8 billion of ephemeral handshakes with different TLS servers **they recovered hundreds of private keys**.
 
-The theory of the attack is actually pretty old, [Lenstra's famous memo on the CRT optimization](http://infoscience.epfl.ch/record/164524/files/nscan20.PDF) was written in 1996. Basicaly, when using the CRT optimization to compute a RSA signature, if a fault happens, a simple computation will allow the private key to be recovered. This kind of attacks are usually thought and fought in the realm of *smartcards* and other *embedded devices*, where faults can be induced with lasers and other magical weapons.
+The theory of the attack is actually pretty old, [Lenstra's famous memo on the CRT optimization](http://infoscience.epfl.ch/record/164524/files/nscan20.PDF) was written in 1996. Basicaly, when using the CRT optimization to compute a RSA signature, if a fault happens, a simple computation will allow the private key to be recovered. This kind of attacks are usually thought of and fought in the realm of *smartcards* and other *embedded devices*, where faults can be induced with lasers and other magical weapons.
 
-The research is novel in a way because they made use of **Accidental Faults Attack**, which is one of the rare kind of remote side-channel attacks.
+The research is novel in a way because they made use of **Accidental Fault Attack**, which is one of the rare kind of remote side-channel attacks.
 
 This is interesting, the oldest passive form of *Accidental Fault Attack* I can think of is **Bit Squatting** that might go back to 2011 at that [defcon talk](https://www.youtube.com/watch?v=aT7mnSstKGs).
 
@@ -64,13 +64,13 @@ If you're using one of these you might want to check with your vendor if a firmw
 
 Since the tests were done on a broad scale and not on particular machines, it is obvious that **more are vulnerable to this attack**. Also only instances connected to internet that offered TLS on port 443 were tested. The vulnerability could potentially exist in any stack using this CRT optimization with RSA.
 
-The first thing you should do is asses where in your stack the RSA algorithm is used to sign. Does it use CRT? If so, does it verifies the signature? Note that the blinding techniques we talked about in one of our [cryptography bulletin]() (may first of this year) will not help.
+The first thing you should do is assess where in your stack the RSA algorithm is used to sign. Does it use CRT? If so, does it verify the signature? 
 
 ## What can cause your server to produce such erroneous signatures
 
 They list 5 reasons in the paper:
 
-* old or vulnerable libraries that have broken operations on integer. For example [CVE-2014-3570](https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-3570) the square operations of OpenSSL was not working properly for some inputs
+* old or vulnerable libraries that have broken operations on integer. For example [CVE-2014-3570](https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-3570) was an issue that caused the square operations of OpenSSL to not work properly for some inputs
 
 * race conditions, when applications are multithreaded
 
@@ -78,7 +78,7 @@ They list 5 reasons in the paper:
 
 * [corruption of the private key](https://eprint.iacr.org/2002/076.pdf)
 
-* errors in the CPU cache, other caches or the main memory.
+* errors in the CPU cache, other caches or the main memory
 
 Note that at the end of the paper, they investigate if a special hardware might be the cause and end up with the conclusion that several devices leaking the private keys were using [Cavium](http://www.cavium.com/) hardware, and in some cases their "custom" version of OpenSSL.
 
@@ -144,15 +144,15 @@ The server (the second person who speaks) replies with 3 messages: a similar *Se
 
 A second round trip is then done where the client encrypts a key with the server's public key and they later use it to compute the TLS shared key. We won't cover them.
 
-Another kind of handshake can be performed if both the client and the server accepts ephemeral key exchange algorithms (Diffie-Hellman or Elliptic Curve Diffie-Hellman). This is to provide *Perfect Forward Secrecy*: if the conversations are recorded by a third party, and the private key of the server is later recovered, nothing will be compromised. Instead of using the server's public key to compute the shared key, the server will generate a *ephemeral* public key and use it to perform an *ephemeral handshake*. Usualy just for this session or for a limited number.
+Another kind of handshake can be performed if both the client and the server accepts ephemeral key exchange algorithms (Diffie-Hellman or Elliptic Curve Diffie-Hellman). This is to provide *Perfect Forward Secrecy*: if the conversations are recorded by a third party, and the private key of the server is later recovered, nothing will be compromised. Instead of using the server's public key to compute the shared key, the server will generate a *ephemeral* public key and use it to perform an *ephemeral handshake*. This key is usually used just for this session or occasionally for a limited number of sessions.
 
 ![ephemeral_handshake](http://i.imgur.com/gEkuTiq.png)
 
-An extra packet called **ServerKeyExchange** is sent. It contains the server's ephemeral public key.
+When this occurs, an extra packet called **ServerKeyExchange** is sent. It contains the server's ephemeral public key.
 
-Interestingly the signature is not computed over the algorithm used for the ephemeral key exchange, that led to a long series of attack which recently ended with [FREAK](https://freakattack.com/) and [Logjam](https://weakdh.org/).
+(Interestingly the signature is not computed over the algorithm used for the ephemeral key exchange, that led to a long series of attacks which recently ended with [FREAK](https://freakattack.com/) and [Logjam](https://weakdh.org/).)
 
-By checking if the signature is correctly performed this is how they checked for the potential vulnerability.
+Checking if the signature is correctly performed is how they checked for this potential vulnerability.
 
 ## I'm a researcher, what's in it for me?
 
@@ -168,10 +168,10 @@ We believe this approach—probing many installations across the Internet, as op
 
 * they used public information to choose what to target, like [scans.io](https://scans.io/), [tlslandscape](https://securityblog.redhat.com/2014/09/10/tls-landscape/) and [certificate-transparency](http://www.certificate-transparency.org/).
 
-* Some TLS servers need a valid Server Name Indication to complete a handshake, so connecting on port 443 of random IPs should not be very efficient. But they found that it was actually not a problem and most key found like that were from weird certificates that wouldn't even be trusted by your browser.
+* Some TLS servers need a valid Server Name Indication to complete a handshake, so connecting on port 443 of random IPs should not be very efficient. But they found that it was actually not a problem and most keys found like that were from weird certificates that wouldn't even be trusted by your browser.
 
-* To avoid too many DNS resolutions they bypassed the TTL values and cached everything (they used [PowerDNS](https://www.powerdns.com/) for that)
+* To avoid too many DNS resolutions they bypassed the TTL values and cached everything (they used [PowerDNS](https://www.powerdns.com/) for that.)
 
-* They guess what devices were used to perform the TLS handshakes from what was written in the x509 certificates in the *subject distinguished name* field or *Common Name* field
+* They guess what devices were used to perform the TLS handshakes from what was written in the x509 certificates in the *subject distinguished name* field or *Common Name* field.
 
 * They used `SSL_set_msg_callback()` ([see doc](https://www.openssl.org/docs/manmaster/ssl/SSL_CTX_set_msg_callback.html)) to avoid modifying OpenSSL.
