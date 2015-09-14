@@ -234,5 +234,24 @@
 }
 
 .center {
-  text-align: center;
+	text-align: center;
+}
+
+table{
+  border-collapse:collapse;
+  border:1px solid rgba(0,0,0,.4);
+  width:100%;
+  text-align:center;
+  margin:30px auto;
+
+  td{
+    padding:10px;
+    }
+  thead{
+    background-color:rgba(0,0,0,.8);
+    color:rgba(255,255,255,.8);
+  }
+  tr:nth-child(even){
+    background-color:rgba(20,41,34,.1);
+  }
 }
