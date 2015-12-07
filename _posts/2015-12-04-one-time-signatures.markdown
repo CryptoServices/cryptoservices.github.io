@@ -3,7 +3,7 @@ layout: post
 title: "One-time signatures"
 date: 2015-12-04 16:13:37
 categories: quantum
-excerpt: PQCrypto recently announced there initial recommendations for post-quantum cryptographic algorithms. For signatures two algorithms were listed, both hash-based signatures schemes, XMSS and SPHINCS. Such schemes are built on top of what we call one-time signatures schemes (OTS). Here's an explanation of what they are.
+excerpt: PQCrypto recently announced their initial recommendations for post-quantum cryptographic algorithms. For signatures two algorithms were listed, both hash-based signatures schemes, XMSS and SPHINCS. Such schemes are built on top of what we call one-time signatures schemes (OTS). Here's an explanation of what they are.
 ---
 
 ## Lamport
