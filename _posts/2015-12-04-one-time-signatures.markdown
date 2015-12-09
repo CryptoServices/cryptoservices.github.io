@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "One-time signatures"
+title: "Hash-Based Signatures Part I: One-Time Signatures (OTS)"
 date: 2015-12-04 16:13:37
 categories: quantum
 excerpt: PQCrypto recently announced their initial recommendations for post-quantum cryptographic algorithms. For signatures two algorithms were listed, both hash-based signatures schemes, XMSS and SPHINCS. Such schemes are built on top of what we call one-time signatures schemes (OTS). Here's an explanation of what they are.
@@ -12,7 +12,7 @@ On October 18th 1979, Leslie Lamport [published](http://research.microsoft.com/e
 
 Most signature schemes rely in part on one-way functions, typically hash functions, for their security proofs. The beauty of Lamport scheme was that this signature was only relying on the security of these one-way functions.
 
-![lamport](/images/2015-12-04-one-time-signatures/lamport.jpg)
+![lamport](/images/hash-based-signatures/lamport.jpg)
 
 here you have a very simple scheme, where \\(x\\) and \\(y\\) are both integers, and to sign a single bit:
 
@@ -26,7 +26,7 @@ Now what happens if you want to sign multiple bits? What you could do is hash th
 
 Now you need 256 private key pairs:
 
-![lamport-full](/images/2015-12-04-one-time-signatures/lamport-full.jpg)
+![lamport-full](/images/hash-based-signatures/lamport-full.jpg)
 
 and if you want to sign \\(100110_2 \dots\\),
 
@@ -36,7 +36,7 @@ you would publish \\((y_0,x_1,x_2,y_3,y_4,x_5,\dots)\\)
 
 A few months after Lamport's publication, Robert Winternitz of the Stanford Mathematics Department proposed to publish \\(h^w(x)\\) instead of publishing \\(h(x)\|h(y)\\).
 
-![wots](/images/2015-12-04-one-time-signatures/wots.jpg)
+![wots](/images/hash-based-signatures/wots.jpg)
 
 For example you could choose \\(w=16\\) and publish \\(h^{16}(x)\\) as your public key, and \\(x\\) would still be your secret key. Now imagine you want to sign the binary \\(1001_2\\) (\\(9_{10}\\)), just publish \\(h^9(x)\\).
 
@@ -50,7 +50,7 @@ A long long time after, in 2011, Buchmann et al [published an update](https://ep
 
 Now your private key is a list of keys that will be use in the MAC, and the message will dictates how many times we iterate the MAC. It's a particular iteration because the previous output is replacing the key, and we always use the same public input. Let's see an example:
 
-![wots variant](/images/2015-12-04-one-time-signatures/wots-variant.jpg)
+![wots variant](/images/hash-based-signatures/wots-variant.jpg)
 
 We have a message \\(M = 1011_2 (= 11_{10})\\) and let's say our variant of W-OTS works for messages in base 3 (in reality it can work for any base \\(w\\)). So we'll say \\(M = (M_0, M_1, M_2) = (1, 0, 2)\\) represents \\(102_3\\).
 
@@ -60,7 +60,7 @@ Note that I don't talk about it here, but there is still a checksum applied to o
 
 Intuition tells me that a public key with another iteration would provide better security
 
-![note](/images/2015-12-04-one-time-signatures/notes.jpg)
+![note](/images/hash-based-signatures/notes.jpg)
 
 here's Andreas Hulsing's answer after pointing me to [his talk on the subject](https://www.youtube.com/watch?v=MecexfUT4OQ):
 
@@ -70,7 +70,7 @@ here's Andreas Hulsing's answer after pointing me to [his talk on the subject](h
 
 There's not much to say about the W-OTS+ scheme. Two years after the variant, Hulsing alone published an upgrade that shorten the signatures size and increase the security of the previous scheme. It uses a chaining function in addition to the family of keyed functions. This time the key is always the same and it's the input that is fed the previous output. Also a random value (or mask) is XORed before the one-way function is applied.
 
-![wots+](/images/2015-12-04-one-time-signatures/wots_plus.jpg)
+![wots+](/images/hash-based-signatures/wots_plus.jpg)
 
 Some precisions from Hulsing about shortening the signatures size:
 
@@ -88,3 +88,5 @@ Here ends today's blogpost! There are many more one-time signature schemes, if y
 So far their applications seems to be reduce to be the basis of Hash-based signatures that are the current advised signature scheme for post quantum usage. See [PQCrypto initial recommendations](http://pqcrypto.eu.org/docs/initial-recommendations.pdf) that was released a few months ago.
 
 PS: Thanks to [Andreas Hulsing for his comments](https://huelsing.wordpress.com/)
+
+[Part II of this series is here](/quantum/2015/12/07/few-times-signatures.html)
