@@ -3,6 +3,7 @@ layout: post
 title: "Hash-Based Signatures Part II: Few-Times Signatures"
 date: 2015-12-07 16:13:37
 categories: quantum
+author: "David Wong"
 excerpt: This is part 2 of our series on hash-based signatures. After seeing how one-time signatures can be made out of hash functions, we will see how we can build schemes that allow us to sign a few times without security issues.
 ---
 

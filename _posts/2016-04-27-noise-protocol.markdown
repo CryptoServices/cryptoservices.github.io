@@ -3,6 +3,7 @@ layout: post
 title:  "The Noise Protocol Framework"
 date:   2016-04-27 18:53:07
 categories: cryptography protocols
+author: "David Wong"
 excerpt: 
 ---
 
