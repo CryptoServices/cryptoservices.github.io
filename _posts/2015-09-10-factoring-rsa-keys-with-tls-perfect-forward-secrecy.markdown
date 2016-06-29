@@ -3,6 +3,7 @@ layout: post
 title:  "Factoring RSA Keys With TLS Perfect Forward Secrecy"
 date:   2015-09-10 14:30:07
 categories: cryptography
+author: "David Wong"
 excerpt: Florian Weimer from the Red Hat Product Security team has just released a technical report entitled "Factoring RSA Keys With TLS Perfect Forward Secrecy
 ---
 

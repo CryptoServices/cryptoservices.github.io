@@ -3,6 +3,7 @@ layout: post
 title: "Hash-Based Signatures Part III: Many-times Signatures"
 date: 2015-12-07 17:13:37
 categories: quantum
+author: "David Wong"
 excerpt: This is part 3 of our series on hash-based signatures. We will see the first practical hash-based signature scheme invented by Merkle and built on top of one-time signature schemes.
 ---
 
