@@ -13,7 +13,7 @@ excerpt:
 
 **Dan Boneh** gave us wine and sent us home, just after nominating **Phillip Rogaway** and the international **miTLS** team for the Levchin Prize, the conference's prize of $10,000 given to the greatest contributors of the year in cryptography. In the large room of the Stanford campus you would have been able to see most of the alive, great cryptographers, clapping by your sides.
 
-That is why we are filled with enthusiasm for next year's edition of the conference: [Real World Crypto 2007](http://www.realworldcrypto.com/rwc2017) and we are proud to announce that **we will be sponsoring the event**. So we hope to see you next year =)
+That is why we are filled with enthusiasm for next year's edition of the conference: [Real World Crypto 2017](http://www.realworldcrypto.com/rwc2017) and we are proud to announce that **we will be sponsoring the event**. So we hope to see you next year =)
 
 
 
