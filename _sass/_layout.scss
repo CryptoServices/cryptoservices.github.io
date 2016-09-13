@@ -13,14 +13,18 @@
 .site-title {
     font-size: 26px;
     line-height: 56px;
-    letter-spacing: -1px;
-    margin-bottom: 0;
-    float: left;
-
+		vertical-align:middle;
+		
     &,
     &:visited {
         color: #c31130;
     }
+}
+
+.site-title-img {
+		margin-right:5px;
+		height:28px;
+		vertical-align:middle;
 }
 
 .site-nav {
