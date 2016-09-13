@@ -2,7 +2,7 @@
  * Site header
  */
 .site-header {
-    border-top: 5px solid $grey-color-dark;
+    border-top: 5px solid #c31130; /*$grey-color-dark;*/
     border-bottom: 1px solid $grey-color-light;
     min-height: 56px;
 
@@ -13,6 +13,8 @@
 .site-title {
     font-size: 26px;
     line-height: 56px;
+		text-shadow:1px 1px 1px white;
+
 		span{
 				vertical-align:middle;
 		}
@@ -21,6 +23,11 @@
     &:visited {
         color: #c31130;
     }
+
+		&:hover {
+				text-decoration:none;
+				text-shadow:1px 1px 1px rgba(0,0,0,.3);
+		}
 
 		img {
 				margin-right:5px;
