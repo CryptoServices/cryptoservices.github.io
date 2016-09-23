@@ -4,7 +4,7 @@ title: Challenge 3 - ScreenApp
 permalink: /challenges/screenapp
 ---
 
-**Can you find anything wrong with my application?** I bought it on the *MobileStore* for a few dollars💰  and it allows me to **pair my smartphone with an airplane TV**. I can then control different things on the screen and get information about my account directly from my phone. It's pretty neat! If you've ever had to deal with these old tactil screens on a flight before... you know what I'm talking about.
+**Can you find anything wrong with my application?** I bought it on the *MobileStore* for a few dollars💰  and it allows me to **pair my smartphone with an airplane TV**. I can then control different things on the screen and get information about my account directly from my phone. It's pretty neat! If you've ever had to deal with these old tactile screens on a flight before... you know what I'm talking about.
 
 ![drawing of an airplane screen](/images/challenges/screenapp.jpg)
 
