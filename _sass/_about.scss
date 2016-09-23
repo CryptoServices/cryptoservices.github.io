@@ -1,0 +1,34 @@
+.about{
+
+		img{
+				margin-bottom:20px;
+		}
+
+		strong.cs{
+				color:#c31130;
+		}
+
+		.last-blogs{
+				border:1px rgba(0,0,0,.7) solid;
+				background-color:rgba(0,0,0,.02);
+				padding:5px;
+				margin-bottom:20px;
+
+				h2{
+						font-size:15px;
+						margin-bottom:5px;
+						color:rgba(0,0,0,.8);
+						font-weight:bold;
+						border-bottom:1px rgba(0,0,0,.8) solid;
+				}
+
+				.arrow{
+						font-size:10px;
+				}
+
+				ul {
+						list-style:none;
+						margin:0;
+				}
+		}
+}

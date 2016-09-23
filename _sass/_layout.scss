@@ -1,6 +1,12 @@
 /**
  * Site header
  */
+
+hr{
+		color: rgba(0,0,0,.2);
+		margin-bottom:15px;
+}
+
 .site-header {
     border-top: 5px solid #c31130; /*$grey-color-dark;*/
     border-bottom: 1px solid $grey-color-light;
