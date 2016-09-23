@@ -20,3 +20,6 @@ Thanks!
 
 Bob
 
+---
+
+> This challenge is definitely not the easiest one. It is not a deal breaker though, and we are not expecting you to find all the cryptographic flaws. We just want to see how you would go and brainstorm about this kind of problem. What power could an attacker have? What could an attacker do? etc... 
