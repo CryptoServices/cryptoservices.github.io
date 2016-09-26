@@ -8,7 +8,7 @@ permalink: /challenges/screenapp
 
 ![drawing of an airplane screen](/images/challenges/screenapp.jpg)
 
-So whenever I find myself in an airplane with that kind of monitor in front of my seat, I can find the pairing page on the menu of that little screen to start the process. It will display 4 random numbers that I will have to type into the smartphone app. After that, these numbers are hashed with SHA-256 to produce a key `k`.
+So whenever I find myself in an airplane with that kind of monitor in front of my seat, I can find the pairing page on the menu of that little screen to start the process. It will display 4 random digits that I will have to type into the smartphone app. After that, this 4-digit number is hashed with SHA-256 to produce a key `k`.
 
 I am then asked to connect to the video display's own wifi hotspot. I know which wifi it is thanks to the SSID displayed on it!
 
