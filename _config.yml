@@ -1,6 +1,6 @@
 # Site settings
 title: Cryptography Services
-email: CryptographyServices@nccgroup.com
+email: uscons-info@nccgroup.trust
 description: > # this means to ignore newlines until "baseurl:"
   Cryptography Services is a dedicated team of consultants from iSEC Partners, 
   Matasano, Intrepidus Group, and NCC Group focused on cryptographic security assessments,
