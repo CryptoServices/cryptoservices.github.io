@@ -21,7 +21,7 @@ But still, the public key is way too large to be practical.
 
 ## Merkle trees
 
-To link all of these OTS public keys to one main public keys, there is one very easy way, it's to use a **Merkle tree**. A solution invented by Merkle in 1979 but [published](discovery.csc.ncsu.edu/Courses/csc774-F11/reading-assignments/Merkle-Tree.pdf) a decade later because of some uninteresting editorial problems.
+To link all of these OTS public keys to one main public keys, there is one very easy way, it's to use a **Merkle tree**. A solution invented by Merkle in 1979 but [published](http://discovery.csc.ncsu.edu/Courses/csc774-F11/reading-assignments/Merkle-Tree.pdf) a decade later because of some uninteresting editorial problems.
 
 Here's a very simple definition: a Merkle tree is a basic binary tree where every node is a hash of its childs, the root is our public key and the leaves are the hashes of our OTS public keys. Here's a drawing because one picture is clearer than a thousand words:
 
