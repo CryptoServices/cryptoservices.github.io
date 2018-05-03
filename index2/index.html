@@ -1,0 +1,78 @@
+---
+layout: default
+---
+
+<div class="about">
+	<h1 id="cryptoservices">About us</h1>
+	
+	<p><strong class="cs">Cryptography Services</strong> is a practice offering of <a href="https://www.nccgroup.trust/us/">NCC Group North America</a>. Our team focuses exclusively on cryptographic audits - combining years of experience in application security with a life-long passion in cryptography to provide a unique offering. We have a wealth of experience building, breaking, fixing and deploying cryptographic solutions that our customers rely on for their core business, data protection, compliance and security needs. Our <a href="/blog/">blog</a> features a subset of the technical posts from the <a href="https://www.nccgroup.trust/uk/about-us/newsroom-and-events/blogs/">NCC Group Blog</a>.</p>
+
+	<div class="last-blogs">
+		<h2>Latest blogposts</h2>
+
+		<ul>
+			{% for post in site.posts limit:5 %}
+      <li><span class="arrow">▶</span> 
+        <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a> <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+      </li>
+			{% endfor %}
+			<li><span class="arrow">▶</span> <a href="/blog/">More on our blog!</a></li>
+		</ul>
+	</div>
+
+	<h2 id="vetting-protocols-and-implementations">Vetting protocols and implementations</h2>
+
+	<p><strong class="cs">Cryptography Services</strong> has years of practical experience dealing with complex protocol and their implementations. In these last few years we have taken part in the open audit of <a href="http://www.darkreading.com/openssl-to-undergo-major-audit/d/d-id/1319392">OpenSSL</a> and <a href="https://www.nccgroup.trust/us/our-research/docker-notary/?research=Public+Reports">Docker</a>, and have worked publicly with the <em>Open Crypto Audit Project</em> (OCAP) to ensure the cryptographic correctness of projects like <a href="https://www.nccgroup.trust/uk/about-us/newsroom-and-events/blogs/2015/february/truecrypt-phase-two-audit-announced/">Truecrypt</a>. Engagements have made us review many different protocols like <strong>QUIC</strong>, <strong>the Signal Protocol</strong>, <a href="https://moderncrypto.org/mail-archive/messaging/2016/002237.html"><strong>Olm & Megolm</strong></a>, <strong>TLS</strong> (up to version 1.3) or even the <a href="http://cryptoservices.github.io/cryptography/protocols/2016/04/27/noise-protocol.html"><strong>Noise Protocol Framework</strong></a>.</p>
+
+	<!-- bullshit -->
+	<p>Assessing cryptographic correctness is important. Implementations have to follow specifications to the letter, without diverting and taking wrong turns. <strong>High-assurance cryptography</strong> has became especially important when it comes to financial cryptography (<strong>mobile payments</strong>, <strong>high frequency trading</strong>, <strong>distributed ledgers</strong>) or privacy enhancing technologies with <strong>Tor</strong>-like networks and <strong>TLS</strong>-like protocols.</p>
+
+	<a href="https://www.nccgroup.trust/uk/about-us/newsroom-and-events/blogs/2015/february/truecrypt-phase-two-audit-announced/" class="button"><span class="arrow">▶</span> Check our public report on <strong>TrueCrypt</strong></a>
+
+
+
+	<h2 id="advising-on-infrastructure">Advising on Design and Deployement</h2>
+
+	<img src="/images/about/infra.jpg" alt="infra" />
+
+	<!-- we don't really do that, that's SIS :/ -->
+	<p><strong class="cs">Cryptography Services</strong>' expertise covers the design and deployment of diverse type of products and infrastructures through their different phases: <strong>establishment of trust</strong>, <strong>provisioning of devices</strong>, <strong>updating schemes</strong>, <strong>public key infrastructures (PKI)</strong>, <strong>protection of data at rest</strong>...</p>
+
+	<!-- this should not be in this category -->
+	<p>We wrote the <a href="https://gist.github.com/mimoo/6dc64b287f83c7b696fbcf3523222f83">Common x509 certificate creation and validation pitfalls</a> guide and conducted the audit of <a href="https://letsencrypt.org/2015/04/14/ncc-group-audit.html">Let's Encrypt</a> as part as of the <em>Internet Security Research Group</em> initiative. We've also written the <a href="https://github.com/iSECPartners/publications/tree/master/reports/Tor%20Browser%20Bundle">Tor Browser Hardening Study</a> and are maintaining a <a href="https://openvpn.fox-it.com/">hardened fork of OpenVPN</a> currently used by the Dutch Government.</p>
+
+	<!-- bullshit -->
+	<p>Our work consist of identifying <strong>threat vectors</strong> and foreseeing the boundaries of what our customers want to protect against. From man-in-the-middle (MITM) attackers able to decrypt communications to physical breaches leading to the extraction of <strong>personally identifiable information</strong> (PII), we help our clients understand the importance of a solid <strong>threat model</strong> and where cryptography resides in it. Take a look at <a href="https://gist.github.com/mimoo/79ecf4b11179379c00d548f2f79dfa89">our more detailed article</a> on threat modeling and the importance of cryptography.</p>
+
+
+
+	<h2 id="reviewing-novel-and-advanced-cryptography">Reviewing novel and advanced cryptography</h2>
+
+	<img src="/images/about/rwc.jpg">
+
+	<p><strong class="cs">Cryptography Services</strong> stays up to date, sponsoring events like <a href="http://cryptoservices.github.io/event/2016/06/23/real-world-crypto-2017.html">Real World Crypto</a> or the <a href="https://underhandedcrypto.com/2016/01/27/rules-for-the-2016-underhanded-crypto-contest/">Underhanded Crypto Contest</a>, and sending its members to the different conferences the field has to offer. With this continual quest of acquiring knowledge, <strong class="cs">Cryptography Services</strong> has obtained experience in numerous area of advanced cryptography. The security of <strong>distributed ledgers</strong>, <strong>smart contracts</strong>, <strong>the blockchain</strong> (check our recent <a href="https://z.cash/zh/blog/auditing-zcash.html">audit of Zcash</a>), <strong>whitebox cryptography</strong>, <strong>light-weight cryptography</strong>, <strong>database encryption</strong> and even <a href="https://www.nccgroup.trust/uk/our-research/post-quantum-cryptography-overview/">post-quantum cryptography</a> are examples of advanced concepts we are knowledgeable in.</p>
+
+
+	<h2 id="identifying-weaknesses-in-cryptosystems">Identifying weaknesses in cryptosystems</h2>
+
+	<img src="/images/about/code.jpg">
+	
+	<p>One part of <strong class="cs">Cryptography Services</strong>' goal is to find what can go wrong in our customers' cryptosystems. We have published research on <a href="https://eprint.iacr.org/2014/563.pdf">block ciphers cryptanalysis</a> last year, as well as <a href="http://eprint.iacr.org/2016/644.pdf">potential backdoors in Diffie-Hellman</a> earlier this year.</p>
+
+	<p>These failures expand beyond the paper, notably in <strong>side-channel attacks</strong>. Check out our whitepaper on <a href="https://eprint.iacr.org/2015/839.pdf">timing attacks against ECDSA</a>. From RSA's blinding techniques to <a href="https://www.youtube.com/watch?v=gbqNCgVcXsM">Differential Power Analysis</a>, we've got it covered.</p>
+
+	<p>We're also the people behind the <a href="http://cryptopals.com/">CryptoPals</a> and the <a href="https://microcorruption.com/login">MicroCorruption</a> <strong>online challenges</strong> that you might have heard of!</p>
+
+	<h2 id="sharing-the-knowledge">Sharing the knowledge</h2>
+
+	<img src="/images/about/Class.jpg">
+	
+	<p>We gave two sold out <strong>training classes</strong> at <a href="https://www.blackhat.com/us-15/training/beyond-the-beast-deep-dives-into-crypto-vulnerabilities.html">Black Hat Vegas 2015</a> and <a href="https://www.blackhat.com/us-16/training/beyond-the-beast-a-broad-survey-of-crypto-vulnerabilities.html">Black Hat Vegas 2016</a> of our course “<em>Beyond the BEAST: Deep Drives into Crypto Vulnerabilities</em>”. We’re continuing to offer this class, so if you’re interested, please <a href="mailto:CryptographyServices@nccgroup.com">contact us</a>!</p>
+
+	One of the goal of <strong class="cs">Cryptography Services</strong> is to <strong>disseminate knowledge</strong> inside and outside the company. Our team publish <a href="http://cryptoservices.github.io/cryptographic/attacks/2016/09/03/Sweet32.html">videos</a>, <a href="/blog">blogposts</a>, whitepapers and share research results in various conferences across the world.</p>
+
+	<h1 id="about-ncc-group">About NCC Group</h1>
+
+	<p>Offering a total information assurance solution for your business, NCC Group protects against risk. We provide freedom from doubt that business critical information, data, websites, applications and infrastructure are available, protected, and operating as they should be at all times. Our services include software escrow and verification, security testing, website performance, software testing and domain services.</p>
+	
+</div>
