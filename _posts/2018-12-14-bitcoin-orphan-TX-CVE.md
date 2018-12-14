@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Bitcion Orphan Transactions and CVE-2012-3789"
+title:  "Bitcoin Orphan Transactions and CVE-2012-3789"
 date:   2018-12-14 15:48:00
 author: "Aleks Kircanski"
 categories: fde 
