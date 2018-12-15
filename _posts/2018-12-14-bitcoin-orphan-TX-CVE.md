@@ -16,11 +16,11 @@ When a cryptocurrency client processes a new transaction, it must gracefully han
 Enter orphan transactions. A cryptocurrency client may deal with this by:
 
 * Keeping a list of orphan transactions
-* Whenever a new (non-orphan) transaction is processed (either as a standalone transaction, or as a part of a block), the client needs to go through the list of known orphan transactions and decide which ones should be "unorphaned", i.e., reconsidered as a transaction whose all parent transcations are known.
+* Whenever a new (non-orphan) transaction is processed (either as a standalone transaction, or as a part of a block), the client needs to go through the list of known orphan transactions and decide which ones should be "unorphaned", i.e., reconsidered as a transaction whose all parent transactions are known.
 * The previous item needs to be done recursively, as "unorphaning" a transaction is similar to receiving an entirely new transaction
 * For each transaction "unorphaning", all entries describing the orphan transactions should be removed
 
-The first requirement in the list mandates having a data structure which keeps a list of orphan transcations: such a list may be indexed by transaction hashes. The remaining requirements dictate a data structure that would somehow facilitate transaction unorphaning. Given a newly received transaction, is this transaction a parent of a known orphan transaction. If yes, is there other unknown parent transactions for this orphan? A data structure that returns maps orphan transactions to their parent hashes would be helpful in this case, as, given a new transaction's hash, it would be easy to see if there is any orphans attached to it.  In other words, a map that keeps `parent tx -> orphan transaction` relations for all saved orphan transactions is needed. 
+The first requirement in the list mandates having a data structure which keeps a list of orphan transactions: such a list may be indexed by transaction hashes. The remaining requirements dictate a data structure that would somehow facilitate transaction unorphaning. Given a newly received transaction, is this transaction a parent of a known orphan transaction? If yes, is there other unknown parent transactions for this orphan? A data structure that maps orphan transactions to their parent hashes would be helpful in this case, as, given a new transaction's hash, it would be easy to see if there is any orphans attached to it.  In other words, a map that keeps `parent tx -> orphan transaction` relations for all saved orphan transactions is needed. 
 
 This is what the Bitcoin client's `mapOrphanBlocks` and `mapOrphanBlocksByPrev` maps do, see the [source code](https://github.com/bitcoin/bitcoin/blob/v0.6.0/src/main.cpp#L170)  for Bitcoin 0.6.0 relevant to the attacks discussed in this post. In particular: 
 
@@ -49,7 +49,7 @@ void AddOrphanTx(const CDataStream& vMsg)
   <img src="/images/bitcoin-orphan-tx-cve/orphans-0.png" width="700" title="hover text">
 </p>
 
-Given the `mapOrphanTransactionByPrev` map, when a new transaction arrives and is accepted to the mempool, it is now easy to look up what orphan transactions depend on it. Suppose that `orphan-tx-hash_3` (colored in red on the picture) is currently stored as orphan. Now assume its parent transaction `parent-tx-hash_2` arrives and is deemed to be valid. Since `orphan-tx-hash_3` depends only on `parent-tx-hash_2`, it can be unorphaned and erased from the orphan memory store. Now `orphan-tx-hash_3` is regarded as a new transaction that may unorphan other orphan transcations. The recursive unorphaning algorithm implemented in a form of a loop is [here](https://github.com/bitcoin/bitcoin/blob/v0.6.0/src/main.cpp#L2541). 
+Given the `mapOrphanTransactionByPrev` map, when a new transaction arrives and is accepted to the mempool, it is now easy to look up what orphan transactions depend on it. Suppose that `orphan-tx-hash_3` (colored in red on the picture) is currently stored as orphan. Now assume its parent transaction `parent-tx-hash_2` arrives and is deemed to be valid. Since `orphan-tx-hash_3` depends only on `parent-tx-hash_2`, it can be unorphaned and erased from the orphan memory store. Now `orphan-tx-hash_3` is regarded as a new transaction that may unorphan other orphan transactions. The recursive unorphaning algorithm implemented in a form of a loop is [here](https://github.com/bitcoin/bitcoin/blob/v0.6.0/src/main.cpp#L2541). 
 
 With such orphan handling mechanism in place, let's discuss the issues that can arise with it.
 
@@ -101,12 +101,12 @@ entries. A natural optimization present in the early Bitcoin client is to go onl
 entries that are indexed by actual inputs to the transaction that we're deleting (see the for loop bounds in the code snippet). 
 Out of such a constrained set of pairs,  finally, only the pairs with expected child transaction are matched (see the if condition). 
 It is possible for a parent transaction to be a parent of multiple different transactions and not necessarily those we want to 
-delete. Going back to the illustration above, when deleting `orpha-tx-hash_m-1`,  `EraseOrphanTx` iterates over three pairs, 
+delete. Going back to the illustration above, when deleting `orphan-tx-hash_m-1`,  `EraseOrphanTx` iterates over three pairs, 
 but only deletes two of them:  `(parent-tx-hash_1, orphan-tx-hash_1)` does not get deleted since `orphan-tx-hash_1` does not 
-match the deleting transcation. 
+match the deleting transaction. 
 
 The question that CVE-2012-3789 answers positively is whether it's possible to have a sufficiently high number of iterations
-in the for loop above to cause CPU exhaustion. The maximum number of orphans is 10000, see ([MAX_ORPHAN_TRANSACTIONS](https://github.com/bitcoin/bitcoin/blob/v0.6.0/src/main.h#L36)). An orphan's parent transcation is identified with a transction hash and the parent transaction's output index. 
+in the for loop above to cause CPU exhaustion. The maximum number of orphans is 10000, see ([MAX_ORPHAN_TRANSACTIONS](https://github.com/bitcoin/bitcoin/blob/v0.6.0/src/main.h#L36)). An orphan's parent transaction is identified with a transaction hash and the parent transaction's output index. 
 A transaction can't repeat parent transaction entries, however, an orphan transaction can reference the same parent hash with different
 output indexes. Consider what happens if the victim client ends up with the `mapOrphanTransactionsByPrev` store in the state
 described by the *left* side of the picture:
@@ -127,5 +127,5 @@ to as on the left side of the picture.
 
 **TL;DR**: Handling orphan transaction in coin clients is fertile ground for memory/CPU exhaustion attacks, since getting victim nodes to store orphan 
 transactions comes at no cost. See [this](https://bitcointalk.org/index.php?topic=23266.0) related discussion on DoS vectors on orphan blocks. Care should
-be exercised when storing and processing data maps coming from peers, especially if the sending peers do not pay fees or do not need to a PoW for the data to be processed. Finally,  limiting a data store's size for memory exhaustion DoS mitigation can be done by introducing a data entry ejection policy. However, ejecting entries leads to a (possibly) unintended consequence of legitimate data entry being erased. As shown by CVE-2012-3789, Denial of Service attacks easily sneak into apps. 
+be exercised when storing and processing data maps coming from peers, especially if the sending peers do not pay fees or do not need a PoW for the data to be processed. Finally,  limiting a data store's size for memory exhaustion DoS mitigation can be done by introducing a data entry ejection policy. However, ejecting entries leads to a (possibly) unintended consequence of legitimate data entry being erased. As shown by CVE-2012-3789, Denial of Service attacks easily sneak into apps. 
 
