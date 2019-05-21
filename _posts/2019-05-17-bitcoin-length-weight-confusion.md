@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "The Longest Blockchain is not the Strongest Blockchain"
-date:  2019-05-XX 17:30:000
+date:  2019-05-21 17:30:00
 author: "Ava Howell"
 categories: blockchain, consensus
 excerpt: "A common misunderstanding of Nakamoto Consensus, even present in the original Bitcoin whitepaper and implementation, is that the miners follow the chain with the greatest number of blocks. The 'longest' blockchain is not necessarily the 'strongest' blockchain, and there are several attacks that network participants can execute in the case where the longest chain is considered the valid one."
