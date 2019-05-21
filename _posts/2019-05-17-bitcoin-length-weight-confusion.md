@@ -202,7 +202,7 @@ consensus. Consensus protocols are complex, and many edge cases which may seem
 innocuous can have drastic consequences. Blockchain developers should
 carefully consider possible attacks against their consensus scheme, adopting
 a defensive mindset and learning from previous mistakes encountered in common
-consensus systems.
+consensus systems. Simulations of the attacks described in this post are available [here](https://github.com/AvaHowellNCC/consensus-simulations).
 
 [^nak]: https://bitcoin.org/bitcoin.pdf
 [^bac]: http://www.hashcash.org/papers/hashcash.pdf
