@@ -3,12 +3,12 @@ layout: post
 title:  "The Longest Blockchain is not the Strongest Blockchain"
 date:  2019-05-21 17:30:00
 author: "Ava Howell"
-categories: blockchain, consensus
+categories: blockchain consensus
 excerpt: "A common misunderstanding of Nakamoto Consensus, even present in the original Bitcoin whitepaper and implementation, is that the miners follow the chain with the greatest number of blocks. The 'longest' blockchain is not necessarily the 'strongest' blockchain, and there are several attacks that network participants can execute in the case where the longest chain is considered the valid one."
 ---
 
 Bitcoin was first popularized in [Bitcoin: A Peer-to-Peer Electronic Cash
-System](https://bitcoin.org/bitcoin.pdf) (2009). The paper[^nak] has spawned
+System](https://bitcoin.org/bitcoin.pdf) (2008). The paper[^nak] has spawned
 a wide variety of systems which use a similar permissionless model for
 achieving consensus.
 
@@ -70,8 +70,9 @@ achieving 51% hash rate.
 ### Briefly: Difficulty Adjustment Algorithm
 
 We'll discuss the concept of a difficulty adjustment algorithm (DAA) in the
-general sense briefly here. First, let's take a look at how the work in
-Proof-of-Work is created:
+general sense briefly here, since some understanding of how it functions is
+required to understand the two attacks outlined in this post. First, let's take
+a look at how the work in Proof-of-Work is created:
 
 
 <p align="center">
@@ -202,7 +203,7 @@ consensus. Consensus protocols are complex, and many edge cases which may seem
 innocuous can have drastic consequences. Blockchain developers should
 carefully consider possible attacks against their consensus scheme, adopting
 a defensive mindset and learning from previous mistakes encountered in common
-consensus systems. Simulations of the attacks described in this post are available [here](https://github.com/AvaHowellNCC/consensus-simulations).
+consensus systems. I've created simulations of the attacks described in the post, which are available on [GitHub](https://github.com/AvaHowellNCC/consensus-simulations).
 
 [^nak]: https://bitcoin.org/bitcoin.pdf
 [^bac]: http://www.hashcash.org/papers/hashcash.pdf
