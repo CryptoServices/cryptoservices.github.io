@@ -9,12 +9,12 @@ excerpt: "A common misunderstanding of Nakamoto Consensus, even present in the o
 
 Bitcoin was first popularized in [Bitcoin: A Peer-to-Peer Electronic Cash
 System](https://bitcoin.org/bitcoin.pdf) (2008). The paper[^nak] has spawned
-a wide variety of systems which use a similar permissionless model for
+a wide variety of systems that use a similar permissionless model for
 achieving consensus.
 
 Bitcoin's consensus algorithm, hereby referred to as "Nakamoto Consensus",
 powers many cryptocurrencies today. The basic concept is simple, the state is
-organized into a tree structure, or 'block tree'. Each node in the tree is a
+organized into a tree structure, or "block tree." Each node in the tree is a
 valid block of transactions, and blocks necessarily point to the previous
 block's cryptographic hash. Nodes reach consensus by selecting a path in this
 tree of valid blocks. This is the basic structure which defines many
@@ -48,10 +48,9 @@ and later:
 However, this conflation of "longest" with "greatest proof-of-work" is false,
 and reaching consensus by purely selecting the longest chain is not safe.
 
-The difference is subtle, but in many common Blockchain designs, there may
-exist longer Proof-of-Work chains that contain far less work. This is due to
+The difference is subtle, but in many common Blockchain designs, longer Proof-of-Work chains may exist that contain far less work. This is due to
 the fact that Proof-of-Work consensus is a probabilistic process controlled
-by mining difficulty, mining difficulty is a function of timestamps, and
+by mining difficulty. Mining difficulty is a function of timestamps, and
 hashrate is not constant. This 'length vs weight' misconception was present
 in Bitcoin's initial implementation and was quickly fixed early on in the
 history of the popular cryptocurrency's development.
@@ -62,10 +61,10 @@ history of the popular cryptocurrency's development.
 The Bitcoin whitepaper[^nak] briefly outlines a framework for
 evaluating the probability of an attacker mining a longer chain than
 the "honest" chain, using a binomial random walk. However, this model
-fails to take into account certain mechanics of the Proof-of-Work
+fails to consider certain mechanics of the Proof-of-Work
 difficulty adjustment algorithm. We'll show two attacks that both
 produce longer valid chains than the majority hashrate chain, without
-achieving 51% hash rate.
+requiring 51% of the network hash rate.
 
 ### Briefly: Difficulty Adjustment Algorithm
 
@@ -80,17 +79,17 @@ a look at how the work in Proof-of-Work is created:
 </p>
 
 
-Miners on a proof-of-work chain want to create a block which meets the
-difficulty target, in other words, a block for which the first `n` bits of
-its hash are zero. `n` acts as a difficulty parameter in this context, in
-Bitcoin this is known as `nBits`, the block mining target threshold.
+Miners on a Proof-of-Work chain want to create a block that meets the difficulty
+target. In other words, a block for which the first `n` bits of its hash are
+zero. `n` acts as a difficulty parameter in this context. In Bitcoin this is
+known as `nBits`, the block mining target threshold.
 
 `nBits` exists because the difficulty of producing new blocks must scale with
 the cumulative mining power of the participants in Proof-of-Work mining. We
 want new blocks to be generated at a constant frequency, known as a 'block
 time', regardless of how many participants and how much power is actively
 mining at a given moment. Hence, the concept of a "difficulty adjustment
-algorithm".
+algorithm."
 
 Time is a tricky subject in distributed systems, in that it doesn't really
 exist. There are block/sequence numbers, how many times a given consensus
@@ -110,18 +109,18 @@ for timestamps.
 The first of two example attacks outlined here to achieve a longer,
 less-heavy Proof-of-Work chain is as follows. It exploits the
 mechanics of timestamp validation rules in order to produce a long, weak
-chain on an isolated network, which can then be broadcast to 'take over' the
-network state assuming the validation rules follow the 'longest chain' rule.
+chain on an isolated network, which can then be broadcast to "take over" the
+network state assuming the validation rules follow the "longest chain" rule.
 
 The attack takes the following form in the general case:
 
 1. Attacker forks the chain from a point where the difficulty is low, such as the genesis
-   block. Keep this fork isolated, never broadcast its blocks.
+   block. Keeps this fork isolated, never broadcasting its blocks.
 
 2. Attacker mines blocks locally, and manipulates the block timestamps so
    that the block time appears to be far too long.
 
-3. Each difficulty adjustment period will cause a drop in difficulty, since the
+3. Each difficulty adjustment period will cause a decrease in difficulty, since the
    timestamps have been manipulated to trick the DAA into lowering the
    difficulty.
 
@@ -183,7 +182,7 @@ hashrate variance.
 The correct method for selecting the current state from the tree of valid blocks
 linked together by Proof-of-Work is to compute the cumulative amount of work
 required to produce the chain, and select the chain with the highest cumulative
-work. In the case of Bitcoin and other PoW cryptocurrencies that use an `nBits`
+work. In the case of Bitcoin and other Proof-of-Work cryptocurrencies that use an `nBits`
 target threshold, this can be computed by taking:
 
 ```
@@ -199,7 +198,7 @@ This fix was implemented early on in Bitcoin's history here: https://github.com/
 # Conclusion 
 
 This length and weight confusion remains a common misconception about Nakamoto
-consensus. Consensus protocols are complex, and many edge cases which may seem
+Consensus. Consensus protocols are complex, and many edge cases that may seem
 innocuous can have drastic consequences. Blockchain developers should
 carefully consider possible attacks against their consensus scheme, adopting
 a defensive mindset and learning from previous mistakes encountered in common
