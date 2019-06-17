@@ -10,7 +10,7 @@ You may have seen us elsewhere on the internet sponsoring [Real World Crypto](ht
 
 * [Google Android Cloud Backup audit](https://www.nccgroup.trust/us/our-research/android-cloud-backuprestore/)
 * [Keybase Protocol audit](https://www.nccgroup.trust/us/our-research/keybase-protocol-security-review/)
-* [ZCash public audit](https://www.nccgroup.trust/us/our-research/zcash-overwinter-consensus-and-sapling-cryptography-review_)
+* The most recent [ZCash public audit](https://www.nccgroup.trust/us/our-research/zcash-overwinter-consensus-and-sapling-cryptography-review)
 * [TrueCrypt](http://blog.cryptographyengineering.com/2015/04/truecrypt-report.html)
 * [Let's Encrypt](https://letsencrypt.org/2015/04/14/ncc-group-audit.html)
 * [OpenSSL](http://www.darkreading.com/openssl-to-undergo-major-audit/d/d-id/1319392) 
