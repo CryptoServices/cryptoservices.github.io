@@ -8,9 +8,9 @@ Cryptography Services is a practice offering of [NCC Group North America](https:
 
 You may have seen us elsewhere on the internet sponsoring [Real World Crypto](https://rwc.iacr.org/2019/) and the [Underhanded Crypto Contest](https://underhandedcrypto.com/rules/) or auditing projects such as:
 
-* [Google Android Cloud Backup audit](https://www.nccgroup.trust/us/our-research/android-cloud-backuprestore/)
-* [Keybase Protocol audit](https://www.nccgroup.trust/us/our-research/keybase-protocol-security-review/)
 * [ZCash public audit](https://www.nccgroup.trust/us/our-research/zcash-overwinter-consensus-and-sapling-cryptography-review)
+* [Keybase Protocol audit](https://www.nccgroup.trust/us/our-research/keybase-protocol-security-review/)
+* [Google Android Cloud Backup audit](https://www.nccgroup.trust/us/our-research/android-cloud-backuprestore/)
 * [IronCore Proxy Re-Encryption Library audit](https://www.nccgroup.trust/us/our-research/proxy-re-encryption-protocol-ironcore-public-report/)
 * [TrueCrypt](http://blog.cryptographyengineering.com/2015/04/truecrypt-report.html)
 * [Let's Encrypt](https://letsencrypt.org/2015/04/14/ncc-group-audit.html)
