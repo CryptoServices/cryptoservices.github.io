@@ -3,7 +3,7 @@ layout: post
 title:  "Implementing Optimized Cryptography for Embedded Systems"
 date:  2019-10-21 17:30:00
 author: "Sam Markelon"
-categories: post-quantum cryptography, embedded systems, efficient implementation
+categories: post-quantum cryptography
 excerpt: "FALCON is a novel post-quantum signature algorithm based on Fast-Fourrier Lattice-based Compact Signatures over NTRU. Signing in FALCON involve the use of complex numbers, which can be approximated with IEEE-754 double precision (binary64) floating point numbers. This presents a problem when targeting ARM Cortex-M4. As mentioned above, the processor optionally supports single precision floating point numbers only. How do we solve this dilemma?"
 ---
 	
