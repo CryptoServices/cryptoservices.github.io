@@ -109,7 +109,7 @@ gdb-multiarch
 
 6. Access the gdb TUI (`ctrl+x a`). To view registers run command `layout regs`. Then step through the program.
 
-![debugging setup](../images/falcon-implementation-blog-post/debugginsetup.png)
+![debugging setup](/images/falcon-implementation-blog-post/debugginsetup.png)
 
 ***
 
@@ -125,21 +125,21 @@ There are unsigned 64-bit left and right shifts called in ```fpr_expm63()```. No
 
 1. The C code of the generalized constant time version:
 
-![fpr_ursh](../images/falcon-implementation-blog-post/fpr_ursh.png)
+![fpr_ursh](/images/falcon-implementation-blog-post/fpr_ursh.png)
 
 2. My handcrafted assembly for ```fpr_ursh```
 
-![fpr_ursh_asm_bad](../images/falcon-implementation-blog-post/ursh_asm_bad.png)
+![fpr_ursh_asm_bad](/images/falcon-implementation-blog-post/ursh_asm_bad.png)
 
 I was quickly told by Thomas that one could do better than what I did (in fact, that one could write more than half the number of opcodes that I wrote). He told me to compile and disassembles a simple function that takes a ```uint64_t``` as input, an ```int``` as a shift value, and returns  a ```uint64_t``` shifted right by the shift value - one line of C with one bitwise operation. An astute observer may also note that the endianness in the above assembly I wrote is also wrong. This was also an issue that I realized unfortunately late and took some time to fix throughout my code.
 
 1. The simple C code
 
-![fpr_ursh](../images/falcon-implementation-blog-post/ursh_test_dis.png)
+![fpr_ursh](/images/falcon-implementation-blog-post/ursh_test_dis.png)
 
 2. Disassembly output
 
-![fpr_ursh](../images/falcon-implementation-blog-post/ursh_dis.png)
+![fpr_ursh](/images/falcon-implementation-blog-post/ursh_dis.png)
 
 As you can see, ignoring the function entry and exit there are eight simple constant time operations to right shift a 64-bit unsigned value created by the compiler. The lesson is to not assume things and use the compiler as a tool. I assumed that the output of the above simple C snippet would not be constant time, something I should have checked. Moreover, throughout the course of the project, I used the compiler as a tool to get ideas when it came to particularly *scary* looking bits of c code.
 
