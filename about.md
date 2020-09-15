@@ -34,7 +34,7 @@ Here is a list of public audits we've done recently:
 * [ZCash public report: Blossom Specification Report](https://www.nccgroup.com/us/our-research/zcash-blossom-specification-report/)
 * [Android Cloud Backup/Restore Google Audit](https://www.nccgroup.com/globalassets/our-research/us/public-reports/2018/final_public_report_ncc_group_google_encryptedbackup_2018-10-10_v1.0.pdf)
 
-For our most recent blog posts, see the list of posts tagged with Cryptography on [NCC Group's Research blog](https://research.nccgroup.com/category/cryptography/) as well as our [blog archives](https://cryptoservices.github.io/archives/) including:
+For our most recent blog posts, see the list of posts tagged with Cryptography on [NCC Group's Research blog](https://research.nccgroup.com/category/cryptography/) as well as our [blog archives](https://cryptoservices.github.io/archives/).
 
 * [Technical Advisory – wolfSSL TLS 1.3 Client Man-in-the-Middle Attack (CVE-2020-24613)](https://research.nccgroup.com/2020/08/24/technical-advisory-wolfssl-tls-1-3-client-man-in-the-middle-attack/)
 * [Security Considerations of zk-SNARK Parameter Multi-Party Computation](https://research.nccgroup.com/2020/06/24/security-considerations-of-zk-snark-parameter-multi-party-computation)
@@ -61,7 +61,7 @@ Recent talks:
 
 * [Generating NTRU trapdoors the Lattice workshop talk](https://simons.berkeley.edu/talks/generating-ntru-trapdoors)
 * [Hardware-Backed Heist: Extracting ECDSA Keys from Qualcomm’s TrustZone](https://ccs19.swenjacobs.com/index.php/program/program-2/)
-* [Depressing the Crypto Economy with DoS Bugs, Cackalacky Con talk](https://github.com/aleks-ncc/slides/blob/master/cackalackycon1.pdf)
+* [Depressing the Crypto Economy with DoS Bugs](https://github.com/aleks-ncc/slides/blob/master/cackalackycon1.pdf)
 
 Recent papers:
 
