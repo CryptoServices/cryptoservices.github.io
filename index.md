@@ -35,6 +35,11 @@ Here is a list of public audits we've done recently:
 
 For our most recent blog posts, see the list of posts tagged with Cryptography on [NCC Group's Research blog](https://research.nccgroup.com/category/cryptography/) as well as our [blog archives](https://cryptoservices.github.io/archives/).
 
+* [Cryptopals: Exploiting CBC Padding Oracles](https://research.nccgroup.com/2021/02/17/cryptopals-exploiting-cbc-padding-oracles/)
+* [Software Verification And Analysis Using Z3](https://research.nccgroup.com/2021/01/29/software-verification-and-analysis-using-z3/)
+* [Real World Cryptography Conference 2021: A Virtual Experience](https://research.nccgroup.com/2021/01/27/real-world-cryptography-conference-2021-a-virtual-experience/)
+* [Double-odd Elliptic Curves](https://research.nccgroup.com/2021/01/06/double-odd-elliptic-curves/)
+* [Faster Modular Inversion and Legendre Symbol, and an X25519 Speed Record](https://research.nccgroup.com/2020/09/28/faster-modular-inversion-and-legendre-symbol-and-an-x25519-speed-record/)
 * [Technical Advisory – wolfSSL TLS 1.3 Client Man-in-the-Middle Attack (CVE-2020-24613)](https://research.nccgroup.com/2020/08/24/technical-advisory-wolfssl-tls-1-3-client-man-in-the-middle-attack/)
 * [Security Considerations of zk-SNARK Parameter Multi-Party Computation](https://research.nccgroup.com/2020/06/24/security-considerations-of-zk-snark-parameter-multi-party-computation)
 * [Pairing over BLS12-381, Part 1: Fields](https://research.nccgroup.com/2020/07/06/pairing-over-bls12-381-part-1-fields/)
