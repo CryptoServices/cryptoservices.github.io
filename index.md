@@ -23,6 +23,7 @@ NCC Group's Cryptography Services practice is a specialized team of consultants 
 
 Here is a list of public audits we've done recently:
 
+* [BLST Cryptographic Implementation Review](https://research.nccgroup.com/2021/01/20/public-report-blst-cryptographic-implementation-review/)
 * [Filecoin Bellman and BLS Signatures Cryptographic Review](https://research.nccgroup.com/2020/10/21/public-report-filecoin-bellman-and-bls-signatures-cryptographic-review/)
 * [Electric Coin Company NU4 Cryptographic Specification and Implementation Review](https://research.nccgroup.com/2020/09/04/public-report-electric-coin-company-nu4-cryptographic-specification-and-implementation-review/)
 * [Coda Cryptographic Review](https://research.nccgroup.com/2020/05/13/public-report-coda-cryptographic-review/)
