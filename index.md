@@ -1,7 +1,8 @@
 ---
 layout: default
-title: About Cryptography Services
 ---
+
+# About Cryptography Services
 
 Cryptographic operations tend to concentrate the confidentiality, integrity and authenticity assurances of an entire application into a very small high-value target. A specialized review of cryptographic implementation ensures that systems are designed, implemented, and operate correctly. Organizations often underestimate the need for cryptographic consulting as vulnerabilities can be obscure and poorly understood yet devastating. Systems operate seemingly correctly, but actually insecurely - a lurking risk that is taken advantage of at the worst time and in the worst way.
 
@@ -22,6 +23,7 @@ NCC Group's Cryptography Services practice is a specialized team of consultants 
 
 Here is a list of public audits we've done recently:
 
+* [Filecoin Bellman and BLS Signatures Cryptographic Review](https://research.nccgroup.com/2020/10/21/public-report-filecoin-bellman-and-bls-signatures-cryptographic-review/)
 * [Electric Coin Company NU4 Cryptographic Specification and Implementation Review](https://research.nccgroup.com/2020/09/04/public-report-electric-coin-company-nu4-cryptographic-specification-and-implementation-review/)
 * [Coda Cryptographic Review](https://research.nccgroup.com/2020/05/13/public-report-coda-cryptographic-review/)
 * [Apache Milagro MPC Security Assessment Public Report](https://research.nccgroup.com/2020/07/20/public-report-qredo-apache-milagro-mpc-cryptographic-assessment/)
