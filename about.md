@@ -30,8 +30,8 @@ Here is a list of public audits we've done recently:
 * [DFinity Threshold ECDSA Cryptography Review](https://research.nccgroup.com/2022/06/15/public-report-threshold-ecdsa-cryptography-review/)
 * [go-cose Security Assessment](https://research.nccgroup.com/2022/05/26/public-report-go-cose-security-assessment/)
 * [O(1) Labs Mina Client SDK, Signature Library and Base Components Cryptography and Implementation Review](https://research.nccgroup.com/2022/02/22/public-report-o1-labs-mina-client-sdk-signature-library-and-base-components-cryptography-and-implementation-review/)
-* [Public Report – Zendoo Proof Verifier Cryptography Review](https://research.nccgroup.com/2021/11/30/public-report-zendoo-proof-verifier-cryptography-review/)
-* [Public Report – Zcash NU5 Cryptography Review](https://research.nccgroup.com/2021/11/02/public-report-zcash-nu5-cryptography-review/)
+* [Zendoo Proof Verifier Cryptography Review](https://research.nccgroup.com/2021/11/30/public-report-zendoo-proof-verifier-cryptography-review/)
+* [Zcash NU5 Cryptography Review](https://research.nccgroup.com/2021/11/02/public-report-zcash-nu5-cryptography-review/)
 * [WhatsApp opaque-ke Cryptographic Implementation Review](https://research.nccgroup.com/2021/12/13/public-report-whatsapp-opaque-ke-cryptographic-implementation-review/)
 * [WhatsApp End-to-End Encrypted Backups Security Assessment](https://research.nccgroup.com/2021/10/27/public-report-whatsapp-end-to-end-encrypted-backups-security-assessment/)
 * [Protocol Labs Groth16 Proof Aggregation: Cryptography and Implementation Review](https://research.nccgroup.com/2021/06/04/public-report-protocol-labs-groth16-proof-aggregation-cryptography-and-implementation-review/)
@@ -59,7 +59,6 @@ For our most recent blog posts, see the list of posts tagged with Cryptography o
 * [Announcing NCC Group’s Cryptopals Guided Tour!](https://research.nccgroup.com/2021/12/10/announcing-ncc-groups-cryptopals-guided-tour/)
 * [An Illustrated Guide to Elliptic Curve Cryptography Validation](https://research.nccgroup.com/2021/11/18/an-illustrated-guide-to-elliptic-curve-cryptography-validation/)
 * [Technical Advisory – Arbitrary Signature Forgery in Stark Bank ECDSA Libraries (CVE-2021-43572, CVE-2021-43570, CVE-2021-43569, CVE-2021-43568, CVE-2021-43571)](https://research.nccgroup.com/2021/11/08/technical-advisory-arbitrary-signature-forgery-in-stark-bank-ecdsa-libraries/)
-* [Paradoxical Compression with Verifiable Delay Functions](Paradoxical Compression with Verifiable Delay Functions)
 * [Optimizing Pairing-Based Cryptography: Montgomery Multiplication in Assembly](https://research.nccgroup.com/2021/09/10/optimizing-pairing-based-cryptography-montgomery-multiplication-in-assembly/)
 * [On the Use of Pedersen Commitments for Confidential Payments](https://research.nccgroup.com/2021/06/15/on-the-use-of-pedersen-commitments-for-confidential-payments/)
 * [Optimizing Pairing-Based Cryptography: Montgomery Arithmetic in Rust](https://research.nccgroup.com/2021/06/09/optimizing-pairing-based-cryptography-montgomery-arithmetic-in-rust/)
@@ -97,6 +96,7 @@ Recent talks:
 
 Recent papers:
 
+* [Paradoxical Compression with Verifiable Delay Functions](https://eprint.iacr.org/2021/1333)
 * [Optimized Binary GCD for Modular Inversion](https://eprint.iacr.org/2020/972)
 * [Optimized Lattice Basis Reduction In Dimension 2, and Fast Schnorr and EdDSA Signature Verification](https://eprint.iacr.org/2020/454)
 * [Efficient Elliptic Curve Operations On Microcontrollers With Finite Field Extensions](https://eprint.iacr.org/2020/009)
