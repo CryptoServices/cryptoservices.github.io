@@ -11,10 +11,10 @@ NCC Group's Cryptography Services practice is a specialized team of consultants 
 ## Service Offerings
 
 * Strategic Cryptographic Advice
-* Applied Crypto Design & Architecture Review
-* Applied Crypto Software Assessment
+* Applied Cryptographic Design & Architecture Review
+* Applied Cryptographic Software Assessment
 * Core Cryptographic Primitive Review
-* Blockchain and Smart Contract Reviews
+* Blockchain and Crypto Reviews
 * Protocol Review
 * Product Review
 * Applied Cryptography Training
@@ -23,7 +23,16 @@ NCC Group's Cryptography Services practice is a specialized team of consultants 
 
 Here is a list of public audits we've done recently:
 
+* [IOV Labs powHSM Security Assessment](https://research.nccgroup.com/2022/10/05/public-report-iov-labs-powhsm-security-assessment/)
+* [Threshold ECDSA Cryptography Review (DFinity)](https://research.nccgroup.com/2022/06/15/public-report-threshold-ecdsa-cryptography-review/)
+* [go-cose Security Assessment](https://research.nccgroup.com/2022/05/26/public-report-go-cose-security-assessment/)
 * [BLST Cryptographic Implementation Review](https://research.nccgroup.com/2021/01/20/public-report-blst-cryptographic-implementation-review/)
+* [O(1) Labs Mina Client SDK, Signature Library and Base Components Cryptography and Implementation Review](https://research.nccgroup.com/2022/02/22/public-report-o1-labs-mina-client-sdk-signature-library-and-base-components-cryptography-and-implementation-review/)
+* [WhatsApp opaque-ke Cryptographic Implementation Review](https://research.nccgroup.com/2021/12/13/public-report-whatsapp-opaque-ke-cryptographic-implementation-review/)
+* [Zendoo Proof Verifier Cryptography Review](https://research.nccgroup.com/2021/11/30/public-report-zendoo-proof-verifier-cryptography-review/)
+* [Zcash NU5 Cryptography Review](https://research.nccgroup.com/2021/11/02/public-report-zcash-nu5-cryptography-review/)
+* [WhatsApp End-to-End Encrypted Backups Security Assessment](https://research.nccgroup.com/2021/10/27/public-report-whatsapp-end-to-end-encrypted-backups-security-assessment/)
+* [Protocol Labs Groth16 Proof Aggregation: Cryptography and Implementation Review](https://research.nccgroup.com/2021/06/04/public-report-protocol-labs-groth16-proof-aggregation-cryptography-and-implementation-review/)
 * [Filecoin Bellman and BLS Signatures Cryptographic Review](https://research.nccgroup.com/2020/10/21/public-report-filecoin-bellman-and-bls-signatures-cryptographic-review/)
 * [Electric Coin Company NU4 Cryptographic Specification and Implementation Review](https://research.nccgroup.com/2020/09/04/public-report-electric-coin-company-nu4-cryptographic-specification-and-implementation-review/)
 * [Coda Cryptographic Review](https://research.nccgroup.com/2020/05/13/public-report-coda-cryptographic-review/)
@@ -36,7 +45,23 @@ Here is a list of public audits we've done recently:
 
 For our most recent blog posts, see the list of posts tagged with Cryptography on [NCC Group's Research blog](https://research.nccgroup.com/category/cryptography/) as well as our [blog archives](https://cryptoservices.github.io/archives/).
 
+* [Breaking Pedersen Hashes in Practice](https://research.nccgroup.com/2023/03/22/breaking-pedersen-hashes-in-practice/)
+* [A Primer On Slowable Encoders](https://research.nccgroup.com/2023/02/20/a-primer-on-slowable-encoders/)
+* [Announcing NCC Group’s Cryptopals Guided Tour: Set 2](https://research.nccgroup.com/2023/01/23/announcing-ncc-groups-cryptopals-guided-tour-set-2/)
+* [A jq255 Elliptic Curve Specification, and a Retrospective](https://research.nccgroup.com/2022/11/21/a-jq255-elliptic-curve-specification-and-a-retrospective/)
+* [Constant-Time Data Processing At a Secret Offset, Privacy and QUIC](https://research.nccgroup.com/2022/09/05/constant-time-data-processing-at-a-secret-offset-privacy-and-quic/)
+* [Implementing the Castryck-Decru SIDH Key Recovery Attack in SageMath](https://research.nccgroup.com/2022/08/08/implementing-the-castryck-decru-sidh-key-recovery-attack-in-sagemath/)
+* [NIST Selects Post-Quantum Algorithms for Standardization](https://research.nccgroup.com/2022/07/13/nist-selects-post-quantum-algorithms-for-standardization/)
+* [Real World Cryptography Conference 2022](https://research.nccgroup.com/2022/04/26/real-world-cryptography-conference-2022/)
+* [A deeper dive into CVE-2021-39137 – a Golang security bug that Rust would have prevented](https://research.nccgroup.com/2022/02/07/a-deeper-dive-into-cve-2021-39137-a-golang-security-bug-that-rust-would-have-prevented/)
+* [Estimating the Bit Security of Pairing-Friendly Curves](https://research.nccgroup.com/2022/02/03/estimating-the-bit-security-of-pairing-friendly-curves/)
+* [An Illustrated Guide to Elliptic Curve Cryptography Validation](https://research.nccgroup.com/2021/11/18/an-illustrated-guide-to-elliptic-curve-cryptography-validation/)
+* [Technical Advisory – Arbitrary Signature Forgery in Stark Bank ECDSA Libraries (CVE-2021-43572, CVE-2021-43570, CVE-2021-43569, CVE-2021-43568, CVE-2021-43571)](https://research.nccgroup.com/2021/11/08/technical-advisory-arbitrary-signature-forgery-in-stark-bank-ecdsa-libraries/)
 * [Cryptopals: Exploiting CBC Padding Oracles](https://research.nccgroup.com/2021/02/17/cryptopals-exploiting-cbc-padding-oracles/)
+* [Announcing NCC Group’s Cryptopals Guided Tour!](https://research.nccgroup.com/2021/12/10/announcing-ncc-groups-cryptopals-guided-tour/)
+* [Optimizing Pairing-Based Cryptography: Montgomery Multiplication in Assembly](https://research.nccgroup.com/2021/09/10/optimizing-pairing-based-cryptography-montgomery-multiplication-in-assembly/)
+* [On the Use of Pedersen Commitments for Confidential Payments](https://research.nccgroup.com/2021/06/15/on-the-use-of-pedersen-commitments-for-confidential-payments/)
+* [Optimizing Pairing-Based Cryptography: Montgomery Arithmetic in Rust](https://research.nccgroup.com/2021/06/09/optimizing-pairing-based-cryptography-montgomery-arithmetic-in-rust/)
 * [Software Verification And Analysis Using Z3](https://research.nccgroup.com/2021/01/29/software-verification-and-analysis-using-z3/)
 * [Real World Cryptography Conference 2021: A Virtual Experience](https://research.nccgroup.com/2021/01/27/real-world-cryptography-conference-2021-a-virtual-experience/)
 * [Double-odd Elliptic Curves](https://research.nccgroup.com/2021/01/06/double-odd-elliptic-curves/)
@@ -70,6 +95,9 @@ Recent talks:
 
 Recent papers:
 
+
+* [BAT: a Fast and Small Key Encapsulation Mechanism](https://research.nccgroup.com/2022/02/14/bat-a-fast-and-small-key-encapsulation-mechanism/)
+* [Paradoxical Compression with Verifiable Delay Functions](https://research.nccgroup.com/2021/10/13/paradoxical-compression-with-verifiable-delay-functions/)
 * [Optimized Binary GCD for Modular Inversion](https://eprint.iacr.org/2020/972)
 * [Optimized Lattice Basis Reduction In Dimension 2, and Fast Schnorr and EdDSA Signature Verification](https://eprint.iacr.org/2020/454)
 * [Efficient Elliptic Curve Operations On Microcontrollers With Finite Field Extensions](https://eprint.iacr.org/2020/009)
