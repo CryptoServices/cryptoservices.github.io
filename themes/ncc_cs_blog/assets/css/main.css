@@ -1,0 +1,48 @@
+/* This is the font we're using on the main site */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300..800&display=swap');
+
+/* We need something for monospace, happy to have feedback on other options */
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&display=swap');
+
+body {
+  color: #222;
+  font-family: 'Open Sans', sans-serif;
+  font-optical-sizing: auto;
+  line-height: 1.5;
+  margin: 1rem;
+  max-width: 768px;
+}
+
+code, pre {
+  font-family: "Google Sans Code", monospace;
+  font-optical-sizing: auto;
+}
+
+p code {
+  font-size: 0.85em;
+  background-color: #1e1e2e;
+  color: #cdd6f4;
+  padding: 5px;
+  border-radius: 4px;
+}
+
+pre {
+  font-size: 0.85em;
+  padding: 1em;
+  border-radius: 4px;
+}
+
+header {
+  border-bottom: 1px solid #222;
+  margin-bottom: 1rem;
+}
+
+footer {
+  border-top: 1px solid #222;
+  margin-top: 1rem;
+}
+
+a {
+  color: #00e;
+  text-decoration: none;
+}
