@@ -58,7 +58,7 @@ Here is a list of public audits we've done recently:
 * [ZCash public report: Blossom Specification Report](https://www.nccgroup.com/us/our-research/zcash-blossom-specification-report/)
 * [Android Cloud Backup/Restore Google Audit](https://www.nccgroup.com/globalassets/our-research/us/public-reports/2018/final_public_report_ncc_group_google_encryptedbackup_2018-10-10_v1.0.pdf)
 
-For our most recent blog posts, see the list of posts tagged with Cryptography on [NCC Group's Research blog](https://research.nccgroup.com/category/cryptography/) as well as our [blog archives](https://cryptoservices.github.io/archives/).
+For our most recent blog posts, see the list of posts tagged with Cryptography on [NCC Group's Research blog](https://www.nccgroup.com/research-blog/?category=18140) as well as our [blog archives](https://cryptoservices.github.io/archives/).
 
 * 2023-03-22: [Breaking Pedersen Hashes in Practice](https://www.nccgroup.com/research-blog/breaking-pedersen-hashes-in-practice/)
 * 2023-02-20: [A Primer On Slowable Encoders](https://www.nccgroup.com/research-blog/a-primer-on-slowable-encoders/)
@@ -97,19 +97,18 @@ For our most recent blog posts, see the list of posts tagged with Cryptography o
 * 2019-12-20: [Passive Decryption of Ethereum P2P traffic](https://www.nccgroup.com/research-blog/passive-decryption-of-ethereum-peer-to-peer-traffic/)
 * 2019-12-19: [On Linux's RNG](https://www.nccgroup.com/research-blog/on-linux-s-random-number-generation/)
 * [Crypto-custody Solutions Open Forum Presentation](https://www.meetup.com/NCCOpenForumNYC/events/265501485/)
-* [Implementing Optimized Cryptography for Embedded Systems](https://www.nccgroup.com/us/about-us/newsroom-and-events/blog/2019/october/implementing-optimized-cryptography-for-embedded-systems/)
-* [Fast and Secure Implementation of the Falcon Post Quantum Cryptography Signature Algorithm](https://www.nccgroup.com/us/about-us/newsroom-and-events/blog/2019/august/fast-and-secure-implementations-of-the-falcon-post-quantum-cryptography-signature-algorithm/)
-* [Encrypted Database Presentation at Blackhat](https://www.blackhat.com/us-19/briefings/schedule/#breaking-encrypted-databases-generic-attacks-on-range-queries-17040)
-* [The Longest Blockchain is not the Strongest Blockchain](https://www.nccgroup.com/us/about-us/newsroom-and-events/blog/2019/june/the-longest-blockchain-is-not-the-strongest-blockchain/)
+* 2019-10: [Implementing Optimized Cryptography for Embedded Systems](https://www.nccgroup.com/us/about-us/newsroom-and-events/blog/2019/october/implementing-optimized-cryptography-for-embedded-systems/)
+* 2019-08: [Fast and Secure Implementation of the Falcon Post Quantum Cryptography Signature Algorithm](https://www.nccgroup.com/us/about-us/newsroom-and-events/blog/2019/august/fast-and-secure-implementations-of-the-falcon-post-quantum-cryptography-signature-algorithm/)
+* 2019-08: [Encrypted Database Presentation at Blackhat](https://www.blackhat.com/us-19/briefings/schedule/#breaking-encrypted-databases-generic-attacks-on-range-queries-17040)
+* 2019-06: [The Longest Blockchain is not the Strongest Blockchain](https://www.nccgroup.com/us/about-us/newsroom-and-events/blog/2019/june/the-longest-blockchain-is-not-the-strongest-blockchain/)
 
 Recent talks:
 
-* [Generating NTRU trapdoors the Lattice workshop talk](https://simons.berkeley.edu/talks/generating-ntru-trapdoors)
-* [Hardware-Backed Heist: Extracting ECDSA Keys from Qualcomm’s TrustZone](https://ccs19.swenjacobs.com/index.php/program/program-2/)
-* [Depressing the Crypto Economy with DoS Bugs](https://github.com/aleks-ncc/slides/blob/master/cackalackycon1.pdf)
+* 2020-04-29: [Generating NTRU trapdoors the Lattice workshop talk](https://simons.berkeley.edu/talks/generating-ntru-trapdoors)
+* 2019-11: [Hardware-Backed Heist: Extracting ECDSA Keys from Qualcomm’s TrustZone](https://ccs19.swenjacobs.com/index.php/program/program-2/)
+* 2019-06: [Depressing the Crypto Economy with DoS Bugs](https://github.com/aleks-ncc/slides/blob/master/cackalackycon1.pdf)
 
 Recent papers:
-
 
 * [BAT: a Fast and Small Key Encapsulation Mechanism](https://research.nccgroup.com/2022/02/14/bat-a-fast-and-small-key-encapsulation-mechanism/)
 * [Paradoxical Compression with Verifiable Delay Functions](https://research.nccgroup.com/2021/10/13/paradoxical-compression-with-verifiable-delay-functions/)
