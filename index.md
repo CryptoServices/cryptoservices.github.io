@@ -104,12 +104,15 @@ For our most recent blog posts, see the list of posts tagged with Cryptography o
 
 Recent talks:
 
+* 2025-04-10: [Post-Quantum Cryptography Auditing (U30c)](https://icmconference.org/?session=post-quantum-cryptography-auditing-u30c) - [Video](https://www.youtube.com/watch?v=WzhhJcBSTss&t=3560s)
 * 2020-04-29: [Generating NTRU trapdoors the Lattice workshop talk](https://simons.berkeley.edu/talks/generating-ntru-trapdoors)
 * 2019-11: [Hardware-Backed Heist: Extracting ECDSA Keys from Qualcomm’s TrustZone](https://ccs19.swenjacobs.com/index.php/program/program-2/)
 * 2019-06: [Depressing the Crypto Economy with DoS Bugs](https://github.com/aleks-ncc/slides/blob/master/cackalackycon1.pdf)
 
 Recent papers:
 
+* 2025-03-08: [Constant-Time Code: The Pessimist Case](https://eprint.iacr.org/2025/435)
+* 2024-11-22: [Cryptography Experiments In Lean 4: SHA-3 Implementation](https://eprint.iacr.org/2024/1880)
 * [BAT: a Fast and Small Key Encapsulation Mechanism](https://research.nccgroup.com/2022/02/14/bat-a-fast-and-small-key-encapsulation-mechanism/)
 * [Paradoxical Compression with Verifiable Delay Functions](https://research.nccgroup.com/2021/10/13/paradoxical-compression-with-verifiable-delay-functions/)
 * [Optimized Binary GCD for Modular Inversion](https://eprint.iacr.org/2020/972)
