@@ -1,0 +1,10 @@
+{{ $blogPosts := where .Site.RegularPages "Section" "blog" }}
+{{ $recentPosts := first 5 (sort $blogPosts "Date" "desc") }}
+
+<ul>
+{{ range $recentPosts }}
+    <li><a href="{{ .RelPermalink }}" target="_blank">{{ .Title }}</a></li>
+{{ end }}
+</ul>
+
+<a href="blog/">See all blogposts</a>

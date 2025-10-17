@@ -1,0 +1,15 @@
+{{ $page := .Site.GetPage "reports.md" }}
+{{ if $page }}
+  {{ $rawContent := $page.RawContent }}
+  {{ $matches := findRESubmatch `- \[([^\]]+)\]\(([^\)]+)\)` $rawContent 5 }}
+
+  <ul>
+    {{ range $matches }}
+      {{ $text := index . 1 }}
+      {{ $url := index . 2 }}
+      <li><a href="{{ $url }}" target="_blank">{{ $text }}</a></li>
+    {{ end }}
+  </ul>
+
+  <a href="reports/">See all reports</a>
+{{ end }}

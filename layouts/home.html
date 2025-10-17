@@ -1,0 +1,22 @@
+{{ define "main" }}
+
+<div class="mostRecentWrapper">
+  <div class="mostRecentBox">
+    <h3>Most Recent Reports</h3>
+      {{ partial "most_recent_reports.html" . }}
+  </div>
+
+    <div class="mostRecentBox">
+    <h3>Most Recent Publications</h3>
+      {{ partial "most_recent_publications.html" . }}
+  </div>
+
+    <div class="mostRecentBox">
+    <h3>Most Recent Blogposts</h3>
+      {{ partial "most_recent_blogposts.html" . }}
+  </div>
+</div>
+
+
+
+{{ end }}

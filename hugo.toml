@@ -1,7 +1,6 @@
 baseURL = 'https://cryptoservices.github.io'
 languageCode = 'en-us'
 title = 'NCC Group | Cryptography Services'
-theme = 'ncc_cs_blog'
 
 [markup]
   [markup.highlight]

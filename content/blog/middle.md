@@ -1,7 +1,7 @@
 +++
-date = '2025-10-16T17:23:53+01:00'
-draft = true
-title = 'Example'
+date = '2025-10-12T17:23:53+01:00'
+draft = false
+title = 'Middle'
 +++
 
 # This is a title
