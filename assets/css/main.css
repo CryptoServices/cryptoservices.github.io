@@ -61,14 +61,51 @@ pre {
 }
 
 header {
-  border-bottom: 1px solid #222;
+  border-bottom: 1px solid var(--grey-two);
   margin-bottom: 1rem;
+}
+
+.headerContents {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2em 0;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.headerContents .leftHeader img {
+  width: 150px
+}
+
+.rightHeader {
+  font-weight: bold;
+  font-size: 1.5em;
 }
 
 footer {
   background: linear-gradient(var(--blue), var(--black));
   color: var(--white);
   min-height: 150px;
+}
+
+.footerContents {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2em 0;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.footerContents .leftFooter img {
+  width: 150px
+}
+
+.rightFooter {
+  text-align: right;
 }
 
 a {
