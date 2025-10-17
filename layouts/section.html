@@ -3,6 +3,6 @@
   {{ .Content }}
   {{ range .Pages }}
     <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
-    {{ .Params.excerpt }}
+    {{ .Params.excerpt | markdownify }}
   {{ end }}
 {{ end }}
