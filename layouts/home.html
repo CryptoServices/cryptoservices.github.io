@@ -1,5 +1,10 @@
 {{ define "main" }}
 
+<div class="aboutUs">
+  {{ $page := .Site.GetPage "/snippets/about.md"}}
+  {{ $page.Content }}
+</div>
+
 <div class="mostRecentWrapper">
   <div class="mostRecentBox">
     <h3>Most Recent Reports</h3>
