@@ -24,15 +24,17 @@ the code fast.
 
 Here is a classic example. Consider the following code:
 
-    void
-    foo(double *src, int *dst)
-    {
-        int i;
+```c
+void
+foo(double *src, int *dst)
+{
+    int i;
 
-        for (i = 0; i < 4; i ++) {
-            dst[i] = (int)src[i];
-        }
+    for (i = 0; i < 4; i ++) {
+        dst[i] = (int)src[i];
     }
+}
+```
 
 Compile this code on a 64-bit x86 platform, running Linux, with GCC
 (it's an up-to-date Ubuntu 18.04, GCC version is 7.3.0). We want full
@@ -42,26 +44,28 @@ maximum optimization level of GCC, which is in practice equivalent to
 "`-O3`", although there have been some GCC forks that defined higher
 levels). Here is the result:
 
-            .file   "zap.c"
-            .text
-            .p2align 4,,15
-            .globl  foo
-            .type   foo, @function
-    foo:
-    .LFB0:
-            .cfi_startproc
-            movupd  (%rdi), %xmm0
-            movupd  16(%rdi), %xmm1
-            cvttpd2dq       %xmm0, %xmm0
-            cvttpd2dq       %xmm1, %xmm1
-            punpcklqdq      %xmm1, %xmm0
-            movups  %xmm0, (%rsi)
-            ret
-            .cfi_endproc
-    .LFE0:
-            .size   foo, .-foo
-            .ident  "GCC: (Ubuntu 7.3.0-27ubuntu1~18.04) 7.3.0"
-            .section        .note.GNU-stack,"",@progbits
+```asm
+        .file   "zap.c"
+        .text
+        .p2align 4,,15
+        .globl  foo
+        .type   foo, @function
+foo:
+.LFB0:
+        .cfi_startproc
+        movupd  (%rdi), %xmm0
+        movupd  16(%rdi), %xmm1
+        cvttpd2dq       %xmm0, %xmm0
+        cvttpd2dq       %xmm1, %xmm1
+        punpcklqdq      %xmm1, %xmm0
+        movups  %xmm0, (%rsi)
+        ret
+        .cfi_endproc
+.LFE0:
+        .size   foo, .-foo
+        .ident  "GCC: (Ubuntu 7.3.0-27ubuntu1~18.04) 7.3.0"
+        .section        .note.GNU-stack,"",@progbits
+```
 
 Each of the first two `movupd` opcodes reads two `double` values into a
 128-bit SSE2 register (a `double` is 64 bits, an SSE2 register can
@@ -150,56 +154,62 @@ occurs, this will be because the result is truncated to the type width,
 e.g. 32 bits. This means that the result of an overflow is predictable,
 and can be tested. Our developer will write this:
 
-    #include <stdio.h>
-    #include <stdlib.h>
+```c
+#include <stdio.h>
+#include <stdlib.h>
 
-    int
-    add(int x, int y, int *z)
-    {
-        int r = x + y;
-        if (x > 0 && y > 0 && r < x) {
-            return 0;
-        }
-        if (x < 0 && y < 0 && r > x) {
-            return 0;
-        }
-        *z = r;
-        return 1;
-    }
-
-    int
-    main(int argc, char *argv[])
-    {
-        int x, y, z;
-        if (argc != 3) {
-            return EXIT_FAILURE;
-        }
-        x = atoi(argv[1]);
-        y = atoi(argv[2]);
-        if (add(x, y, &z)) {
-            printf("%d\n", z);
-        } else {
-            printf("overflow!\n");
-        }
+int
+add(int x, int y, int *z)
+{
+    int r = x + y;
+    if (x > 0 && y > 0 && r < x) {
         return 0;
     }
+    if (x < 0 && y < 0 && r > x) {
+        return 0;
+    }
+    *z = r;
+    return 1;
+}
+
+int
+main(int argc, char *argv[])
+{
+    int x, y, z;
+    if (argc != 3) {
+        return EXIT_FAILURE;
+    }
+    x = atoi(argv[1]);
+    y = atoi(argv[2]);
+    if (add(x, y, &z)) {
+        printf("%d\n", z);
+    } else {
+        printf("overflow!\n");
+    }
+    return 0;
+}
+```
 
 Now let's try to compile that with GCC:
 
-    $ gcc -W -Wall -O9 testadd.c
-    $ ./a.out 17 42
-    59
-    $ ./a.out 2000000000 1500000000
-    overflow!
+```
+$ gcc -W -Wall -O9 testadd.c
+$ ./a.out 17 42
+59
+$ ./a.out 2000000000 1500000000
+overflow!
+```
 
 OK, this seems to work. Let's try again with another compiler, Clang
 (version 6.0.0 on my system):
 
-    $ clang -W -Wall -O3 testadd.c
-    $ ./a.out 17 42
-    59
-    $ ./a.out 2000000000 1500000000
-    -794967296
+```
+$ clang -W -Wall -O3 testadd.c
+$ ./a.out 17 42
+59
+$ ./a.out 2000000000 1500000000
+-794967296
+```
 
 Wut?
 
@@ -253,29 +263,33 @@ kills the process (nevermind that "FPE" means "floating-point
 exception", while `idiv` works with integers). However, there is another
 situation that also implies UB. Consider this code:
 
-    #include <stdio.h>
-    #include <stdlib.h>
+```c
+#include <stdio.h>
+#include <stdlib.h>
 
-    int
-    main(int argc, char *argv[])
-    {
-        int x, y;
-        if (argc != 3) {
-            return EXIT_FAILURE;
-        }
-        x = atoi(argv[1]);
-        y = atoi(argv[2]);
-        printf("%d\n", x / y);
-        return 0;
+int
+main(int argc, char *argv[])
+{
+    int x, y;
+    if (argc != 3) {
+        return EXIT_FAILURE;
     }
+    x = atoi(argv[1]);
+    y = atoi(argv[2]);
+    printf("%d\n", x / y);
+    return 0;
+}
+```
 
 And then try it:
 
-    $ gcc -W -Wall -O testdiv.c
-    $ ./a.out 42 17
-    2
-    $ ./a.out -2147483648 -1
-    zsh: floating point exception (core dumped)  ./a.out -2147483648 -1
+```
+$ gcc -W -Wall -O testdiv.c
+$ ./a.out 42 17
+2
+$ ./a.out -2147483648 -1
+zsh: floating point exception (core dumped)  ./a.out -2147483648 -1
+```
 
 Indeed, on that machine (still my common x86 running Linux), the `int`
 type can represent values from -2147483648 to +2147483647. When dividing
@@ -300,27 +314,29 @@ align the standard with the reality of common hardware platforms.
 There are many subtle conditions that can lead to UB. Look at this
 code:
 
-    #include <stdio.h>
-    #include <stdlib.h>
+```c
+#include <stdio.h>
+#include <stdlib.h>
 
-    unsigned short
-    mul(unsigned short x, unsigned short y)
-    {
-        return x * y;
-    }
+unsigned short
+mul(unsigned short x, unsigned short y)
+{
+    return x * y;
+}
 
-    int
-    main(int argc, char *argv[])
-    {
-        int x, y;
-        if (argc != 3) {
-            return EXIT_FAILURE;
-        }
-        x = atoi(argv[1]);
-        y = atoi(argv[2]);
-        printf("%d\n", mul(x, y));
-        return 0;
+int
+main(int argc, char *argv[])
+{
+    int x, y;
+    if (argc != 3) {
+        return EXIT_FAILURE;
     }
+    x = atoi(argv[1]);
+    y = atoi(argv[2]);
+    printf("%d\n", mul(x, y));
+    return 0;
+}
+```
 
 As per the C standard, what is this C program allowed to print, if
 invoked with parameters "45000" and "50000"?
@@ -358,29 +374,31 @@ to execution).
 
 A final example, this one in C++:
 
-    #include <stdio.h>
-    #include <stdlib.h>
-    #include <string.h>
-    #include <array>
+```cpp
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <array>
 
-    int
-    main(int argc, char *argv[])
-    {
-        std::array<char, 16> tmp;
-        int i;
+int
+main(int argc, char *argv[])
+{
+    std::array<char, 16> tmp;
+    int i;
 
-        if (argc < 2) {
-            return EXIT_FAILURE;
-        }
-        memset(tmp.data(), 0, 16);
-        if (strlen(argv[1]) < 16) {
-            strcpy(tmp.data(), argv[1]);
-        }
-        for (i = 0; i < 17; i ++) {
-            printf(" %02x", tmp[i]);
-        }
-        printf("\n");
+    if (argc < 2) {
+        return EXIT_FAILURE;
     }
+    memset(tmp.data(), 0, 16);
+    if (strlen(argv[1]) < 16) {
+        strcpy(tmp.data(), argv[1]);
+    }
+    for (i = 0; i < 17; i ++) {
+        printf(" %02x", tmp[i]);
+    }
+    printf("\n");
+}
+```
 
 This is _not_ a classic "`strcpy()` is bad bad bad" example. Indeed, in
 the code above, the `strcpy()` is performed only if the source string is
@@ -392,17 +410,19 @@ should.
 
 Let's try it:
 
-    $ g++ -W -Wall -O9 testvec.c
-    $ ./a.out foo
-     66 6f 6f 00 00 00 00 00 00 00 00 00 00 00 00 00 10 58 ffffffca ff
-    ffffac ffffffc0 55 00 00 00 ffffff80 71 34 ffffff99 07 ffffffba ff
-    ffffea ffffffd0 ffffffe5 44 ffffff83 fffffffd 7f 00 00 00 00 00 00
-     00 00 00 00 10 58 ffffffca ffffffac ffffffc0 55 00 00 ffffff97 7b
-     12 1b ffffffa1 7f 00 00 02 00 00 00 00 00 00 00 ffffffd8 ffffffe5
-     44 ffffff83 fffffffd 7f 00 00 00 ffffff80 00 00 02 00 00 00 60 56
-    (...)
-    62 64 3d 30 30
-    zsh: segmentation fault (core dumped)  ./a.out foo
+```
+$ g++ -W -Wall -O9 testvec.c
+$ ./a.out foo
+    66 6f 6f 00 00 00 00 00 00 00 00 00 00 00 00 00 10 58 ffffffca ff
+ffffac ffffffc0 55 00 00 00 ffffff80 71 34 ffffff99 07 ffffffba ff
+ffffea ffffffd0 ffffffe5 44 ffffff83 fffffffd 7f 00 00 00 00 00 00
+    00 00 00 00 10 58 ffffffca ffffffac ffffffc0 55 00 00 ffffff97 7b
+    12 1b ffffffa1 7f 00 00 02 00 00 00 00 00 00 00 ffffffd8 ffffffe5
+    44 ffffff83 fffffffd 7f 00 00 00 ffffff80 00 00 02 00 00 00 60 56
+(...)
+62 64 3d 30 30
+zsh: segmentation fault (core dumped)  ./a.out foo
+```
 
 Wut++?
 
@@ -425,14 +445,16 @@ occurs.
 Amusingly, if GCC is invoked with less aggressive optimizations, it will
 warn in a quite explicit way:
 
-    $ g++ -W -Wall -O1 testvec.c
-    testvec.c: In function ‘int main(int, char**)’:
-    testvec.c:20:15: warning: iteration 16 invokes undefined behavior [-Waggressive-loop-optimizations]
-             printf(" %02x", tmp[i]);
-             ~~~~~~^~~~~~~~~~~~~~~~~
-    testvec.c:19:19: note: within this loop
-         for (i = 0; i < 17; i ++) {
-                     ~~^~~~
+```
+$ g++ -W -Wall -O1 testvec.c
+testvec.c: In function ‘int main(int, char**)’:
+testvec.c:20:15: warning: iteration 16 invokes undefined behavior [-Waggressive-loop-optimizations]
+            printf(" %02x", tmp[i]);
+            ~~~~~~^~~~~~~~~~~~~~~~~
+testvec.c:19:19: note: within this loop
+        for (i = 0; i < 17; i ++) {
+                    ~~^~~~
+```
 
 But at `-O9` level, somehow, the warning disappears. This may be related
 to the more forcefull loop unrolling that happens at high optimization
