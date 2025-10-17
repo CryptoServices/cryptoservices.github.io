@@ -3,7 +3,9 @@ layout: "post"
 title:  "Truecrypt Phase Two Audit Announced"
 date:   2015-02-18 16:56:07
 categories: fde 
-excerpt: "Cryptography Services will be conducting the second phase of the <a href='http://istruecryptauditedyet.com/'>Truecrypt Audit</a>, focusing on the cryptography of the project as it is used in the most common configurations. This follows up iSEC's Phase One Audit, and will complement the work done there."
+excerpt: "Cryptography Services will be conducting the second phase of the <a href='http://istruecryptauditedyet.com/'>Truecrypt Audit</a>, focusing on the cryptography of the project as it is used in the most common configurations. This follows up iSEC's Phase One Audit, and will complement the work done there"
+aliases:
+ - /fde/2015/02/18/truecrypt-phase-two.html
 ---
 
 iSEC Partners completed the [first phase](https://isecpartners.github.io/news/2014/04/14/iSEC-Completes-Truecrypt-Audit.html) of the Truecrypt audit almost a year ago, focusing on the Windows kernel code, bootloader, filesystem driver, and surrounding areas. But the cryptography was left to a second phase, to be looked at in a specialized engagement. 

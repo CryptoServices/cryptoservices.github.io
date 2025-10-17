@@ -4,6 +4,8 @@ title:  "Beyond the BEAST Returns to Black Hat USA"
 date:   2016-02-12 12:30:07
 categories: cryptography training
 excerpt: 
+aliases:
+ - /cryptography/training/2016/02/12/crypto-course-comes-back-to-black-hat.html
 ---
 
 Last year we premiered a new training course we developed as a back-to-back sold-out offering at Black Hat in Las Vegas. This year [we're offering it again at Black Hat](https://www.blackhat.com/us-16/training/beyond-the-beast-a-broad-survey-of-crypto-vulnerabilities.html). Since debuting last year, we've offered the course more than a half-dozen times, and gotten outstanding feedback that has helped us improve it each successive offering. We've updated the course significantly since last year - improving the layout, content, and exercises. We've taken a few existing topics and added a few more to create the new Subverting Signatures module, retooled our coverage of Randomness to include more analysis on PRNGs in the abstract and more exploiting specific broken PRNGs, and included more information about ECC - both background and attacks.

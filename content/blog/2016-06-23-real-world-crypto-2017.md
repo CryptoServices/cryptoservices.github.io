@@ -5,6 +5,8 @@ date:   2016-06-23 15:48:07
 categories: event
 author: "David Wong"
 excerpt: 
+aliases:
+ - /event/2016/06/23/real-world-crypto-2017.html
 ---
 
 **Real World Crypto** is _THE_ convention anyone interested in cryptography -- but usually annoyed by most of the too theoretical conventions of the field -- should attend. It seeks to bridge the world of applied-cryptography to the one of academia. The speakers and the audience come from both the industry and universities to mingle together for a few days in what is in my eyes **the most amazing convention about cryptography**.

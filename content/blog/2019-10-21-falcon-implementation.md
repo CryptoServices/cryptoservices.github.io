@@ -5,6 +5,8 @@ date:  2019-10-21 17:30:00
 author: "Sam Markelon"
 categories: post-quantum cryptography
 excerpt: "FALCON is a novel post-quantum signature algorithm based on Fast-Fourrier Lattice-based Compact Signatures over NTRU. Signing in FALCON involve the use of complex numbers, which can be approximated with IEEE-754 double precision (binary64) floating point numbers. This presents a problem when targeting ARM Cortex-M4. As mentioned above, the processor optionally supports single precision floating point numbers only. How do we solve this dilemma?"
+aliases:
+ - /post-quantum/cryptography/2019/10/21/falcon-implementation.html
 ---
 	
 At the start of my summer internship with NCC Group's Cryptography Services (CS), I was told to find a research project that interested me. I have a background and interest in post-quantum cryptography, so when I came across FALCON, a lattice-based cryptographic signature algorithm, I got excited. My background is more on the theoretical side (as theoretical as an undergraduate can get), and I would not consider my self an especially experienced software engineer. The work being done on FALCON at NCC Group, specifically by [Thomas Pornin](https://twitter.com/bearsslnews), was all implementation based. One such implementation was the *cxm4* version of FALCON. This version, as the name implies, targeted systems with an ARM Cortex-M4 microprocessor, a popular choice for embedded system. I jumped on the opportunity to gain more experience with cryptographic implementation, but also learn something completely new in embedded systems.

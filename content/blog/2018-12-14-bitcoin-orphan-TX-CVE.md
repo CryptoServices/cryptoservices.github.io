@@ -5,6 +5,8 @@ date:   2018-12-14 15:48:00
 author: "Aleks Kircanski"
 categories: fde 
 excerpt: "Before developing or reviewing blockchain client software, surveying previously known blockchain software vulnerabilities (notably, Bitcoin, given the amount of audit it received) should be done."
+aliases:
+ - /fde/2018/12/14/bitcoin-orphan-TX-CVE.html
 ---
 
 Cryptocurrency clients ingest and process unauthenticated content, perform cryptographic validations and store large amounts of data. In around 2012, a couple of interesting DoS attack vectors in Bitcoin involving orphan transaction handling were reported by Sergio Demian Lerner. Given that Satoshi-like blockchain clients have been repeatedly reimplemented from scratch since then, it is likely that these type of issues re-occur in other coin implementations. For this reason, in this blog post, we discuss [CVE-2012-3789](https://en.bitcoin.it/wiki/CVE-2012-3789) once again, add some illustrations and further commentary on the issues brought up by this CVE. The bottom-line is: when developing cryptocurrency blockchain client from scratch, surveying previously known blockchain software vulnerabilities (notably, Bitcoin, given the amount of audit it received) is necessary.

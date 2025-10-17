@@ -5,6 +5,8 @@ date:   2016-06-27 10:40:07
 categories: event
 author: "David Wong"
 excerpt: 
+aliases:
+ - /event/2016/06/27/how-to-backdoor-diffie-hellman.html
 ---
 
 In the history of American cryptography, companies wanting to export

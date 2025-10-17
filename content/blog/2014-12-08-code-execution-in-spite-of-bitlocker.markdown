@@ -4,6 +4,8 @@ title:  "Code Execution In Spite Of BitLocker"
 date:   2014-12-08 13:56:07
 categories: fde 
 excerpt: BitLocker in Windows 8 removed the custom Elephant Diffuser, and uses only the extremely malleable AES-CBC mode (despite statements saying this mode was unacceptable when BitLocker was introduced in 2006). Removing Elephant allows us to perform fine-grain attacks on the inert, encrypted disk - and lets us achieve arbitrary code execution in spite of the cryptographic protection.
+aliases:
+ - /fde/2014/12/08/code-execution-in-spite-of-bitlocker.html
 ---
 
 Disk Encryption is "a litany of difficult tradeoffs and messy compromises" as our good friend and mentor Tom Ptacek put it in [his blog post](http://sockpuppet.org/blog/2014/04/30/you-dont-want-xts/).  That sounds depressing, but it's pretty accurate - trying to encrypt an entire hard drive is riddled with constraints.  For example:

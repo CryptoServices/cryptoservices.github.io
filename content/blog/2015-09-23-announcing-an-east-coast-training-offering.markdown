@@ -4,6 +4,8 @@ title:  "Announcing an east coast offering of our Beyond the BEAST Crypto Traini
 date:   2015-09-23 8:30:07
 categories: cryptography training
 excerpt: November 17th and 18th will be an offering of our Beyond the BEAST training in New York City, previously seen at Black Hat. Contact us right away to reserve your seat!
+aliases:
+ - /cryptography/training/2015/09/23/announcing-an-east-coast-training-offering.html
 ---
 
 In August we premiered a new training course we developed as a back-to-back [sold-out offering at Black Hat in Las Vegas](https://www.blackhat.com/us-15/training/beyond-the-beast-deep-dives-into-crypto-vulnerabilities.html).  We're offering it again in November at [Black Hat Europe](https://www.blackhat.com/eu-15/training/beyond-the-beast-deep-dives-into-crypto-vulnerabilities.html) - and we're announcing that we're offering an open registration a week later - <strong>November 17th and 18th in New York City</strong>.

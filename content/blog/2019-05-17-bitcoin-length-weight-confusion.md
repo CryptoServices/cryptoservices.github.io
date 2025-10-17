@@ -5,6 +5,8 @@ date:  2019-05-21 17:30:00
 author: "Ava Howell"
 categories: blockchain consensus
 excerpt: "A common misunderstanding of Nakamoto Consensus, even present in the original Bitcoin whitepaper and implementation, is that the miners follow the chain with the greatest number of blocks. The 'longest' blockchain is not necessarily the 'strongest' blockchain, and there are several attacks that network participants can execute in the case where the longest chain is considered the valid one."
+aliases:
+ - /blockchain/consensus/2019/05/21/bitcoin-length-weight-confusion.html
 ---
 
 Bitcoin was first popularized in [Bitcoin: A Peer-to-Peer Electronic Cash

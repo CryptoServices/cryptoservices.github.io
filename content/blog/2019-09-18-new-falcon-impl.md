@@ -5,6 +5,8 @@ date:  2019-09-18 10:17:00
 author: "Thomas Pornin"
 categories: post-quantum cryptography
 excerpt: "Falcon is new lattice-based post-quantum signature algorithm, which offers compact signatures and keys, and good performance. An efficient, portable and secure implementation is published, that can work on both big servers, and small embedded constrained systems."
+aliases:
+ - /post-quantum/cryptography/2019/09/18/new-falcon-impl.html
 ---
 
 Earlier this month I released new, improved implementations of the

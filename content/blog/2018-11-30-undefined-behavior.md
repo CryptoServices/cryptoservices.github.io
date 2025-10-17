@@ -5,6 +5,8 @@ date:   2018-11-30 17:30:00
 author: "Thomas Pornin"
 categories: fde 
 excerpt: "In C and C++, there is such a thing as 'Undefined Behavior', by which the relevant standards mean to say that anything goes. They really mean it."
+aliases:
+ - /fde/2018/11/30/undefined-behavior.html
 ---
 
 **Undefined Behavior** is the expression used in C and C++ to describe a

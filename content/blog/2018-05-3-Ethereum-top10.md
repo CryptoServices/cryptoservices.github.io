@@ -5,6 +5,8 @@ date:   2018-05-01 16:56:07
 author: "David Wong"
 categories: fde 
 excerpt: "I am pleased to announce the launch of the Decentralized Application Security Project (DASP), an open and collaborative project to categorize and rank all known smart contract vulnerabilities."
+aliases:
+ - /fde/2018/05/01/Ethereum-top10.html
 ---
 
 I am pleased to announce the launch of the [Decentralized Application Security Project (DASP)](https://www.dasp.co/), an open and collaborative project to categorize and rank all known smart contract vulnerabilities. The field of smart contracts, while relatively new, has seen an incredible amount of surprising and devastating attacks. Notably, there was [the DAO contract](https://dasp.co/#item-1) which lost 615,391 ethers (~ $50 million at the time) before forcing a fork of the Ethereum protocol, and then there was [the Parity multi-signature wallet bugs](https://dasp.co/#item-2) which allowed attackers to steal more than 150,000 ethers (~ $30 million dollars at the time) and then block another 513,774 ethers. I believe it is of the utmost importance for the security community to assess the different smart contract issues and educate developers about these risks. This was done by the [OWASP](https://www.owasp.org/index.php/Main_Page) for web application vulnerabilities, and was successful in raising awareness of vulnerabilities in web applications.

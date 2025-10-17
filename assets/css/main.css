@@ -97,3 +97,12 @@ a {
 .mostRecentBox h3 {
   text-align: center;
 }
+
+.blogPost img {
+  max-width: 100%;
+}
+
+.blogPost p:has(> img:only-child),
+.blogPost p:has(> img:first-child:last-child) { /* older browsers may not support :has */
+  text-align: center;
+}

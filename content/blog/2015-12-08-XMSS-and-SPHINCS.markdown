@@ -5,6 +5,8 @@ date: 2015-12-08 16:13:37
 categories: quantum
 author: "David Wong"
 excerpt: This is the last blogpost on this series on hash-based signatures. We will finally see how the state-of-the-art hash-based signatures schemes XMSS and SPHINCS works on the surface.
+aliases:
+ - /quantum/2015/12/08/XMSS-and-SPHINCS.html
 ---
 
 This post is the ending of a series of blogposts on hash-based signatures. You can find [part I here](/quantum/2015/12/04/one-time-signatures.html)

@@ -5,6 +5,8 @@ date: 2015-12-07 17:13:37
 categories: quantum
 author: "David Wong"
 excerpt: This is part 3 of our series on hash-based signatures. We will see the first practical hash-based signature scheme invented by Merkle and built on top of one-time signature schemes.
+aliases:
+ - /quantum/2015/12/07/many-times-signatures.html
 ---
 
 We saw previously what were one-time signatures (OTS), then what were few-time signatures (FTS). But now is time to see how to have practical signature schemes based on hash functions. Signature schemes that you can use many times, and ideally as many times as you'd want.

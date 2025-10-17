@@ -4,6 +4,8 @@ title:  "A back-to-front TrueCrypt recovery story:  the plaintext is the ciphert
 date:   2015-04-21 07:30:07
 categories: truecrypt
 excerpt: "One of our clients recently approached us for assistance with recovering data from a laptop hard drive which had been encrypted using TrueCrypt. A hardware repair gone wrong had led to problems booting the operating system, and a variety of attempted fixes had been unsuccessful. They had already sent the drive to a specialist data recovery firm, who imaged the disk successfully but found the contents to be encrypted, and couldn’t make any progress. NCC took on the engineering required to turn an opaque encrypted drive and passphrase back into business-critical bits."
+aliases:
+ - /truecrypt/2015/04/21/truecrypt-back-to-front.html
 ---
 
 One of our clients recently approached us for assistance with recovering data from a laptop hard drive which had been encrypted using TrueCrypt. A hardware repair gone wrong had led to problems booting the operating system, and a variety of attempted fixes had been unsuccessful. They had already sent the drive to a specialist data recovery firm, who imaged the disk successfully but found the contents to be encrypted, and couldn't make any progress. The laptop contained some business-critical data which hadn't been backed up, so our client was understandably very keen to get it back. Because they were adamant that they knew the correct TrueCrypt passphrase, they still had the TrueCrypt Rescue Disk for the laptop, and the data recovery firm had confirmed that there were no problems with the drive at the physical level, we thought there was a good chance that we could help. It turned out to be an interesting job.

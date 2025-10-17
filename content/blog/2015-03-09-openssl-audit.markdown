@@ -4,6 +4,8 @@ title:  "OpenSSL Audit"
 date:   2015-03-09 16:56:07
 categories: openssl
 excerpt: "We're excited to announce that as part of the [Linux Foundation's Core Infrastructure Initiative](http://www.linuxfoundation.org/programs/core-infrastructure-initiative), and organized by the [Open Crypto Audit Project](https://opencryptoaudit.org/), Cryptography Services will be conducting an audit of OpenSSL. This is an amazing opportunity to dive deeply into one of the pieces of software that so much of the world relies on, and we're honored to have been chosen to conduct it."
+aliases:
+ - /openssl/2015/03/09/openssl-audit.html
 ---
 
 The reputation built up by NCC Group, including iSEC Partners, Matasano Security, Intrepidus Group, and NGS Secure, has led companies large and small to turn to us for their security needs. We audit everything from kernels and hypervisors all the way up the stack to mobile and web applications. And the Cryptography Services practice has been able to channel that expertise into a specific corner of security, allowing that investment to pay dividends in research, actionable intelligence for our clients, and give us the opportunity to work on some of the most exciting projects out there.

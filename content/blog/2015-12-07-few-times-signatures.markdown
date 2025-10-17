@@ -5,6 +5,8 @@ date: 2015-12-07 16:13:37
 categories: quantum
 author: "David Wong"
 excerpt: This is part 2 of our series on hash-based signatures. After seeing how one-time signatures can be made out of hash functions, we will see how we can build schemes that allow us to sign a few times without security issues.
+aliases:
+ - /quantum/2015/12/07/few-times-signatures.html
 ---
 
 If you missed the [previous blogpost on OTS](/quantum/2015/12/04/XMSS-and-SPHINCS.html), go check it out first. This is about a construction a bit more useful, that allows to sign more than one signature with the same small public-key/private-key. The final goal of this series is to see how hash-based signature schemes are built. But they are not the only applications of one-time signatures (OTS) and few-times signatures (FTS).
