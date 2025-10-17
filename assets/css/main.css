@@ -14,8 +14,18 @@
 
   /* Primary Colours */
   --blue: #000FFF;
-  --red-orange: #FF3B0B;
+  --blue-80: #0011ff;
+  --blue-60: #404dff;
+  --blue-40: #8088ff;
+  --blue-20: #bfc3ff;
 
+  --red-orange: #FF3B0B;
+  --red-orange-80: #ff3b0a;
+  --red-orange-60: #ff6c47;
+  --red-orange-40: #ff9d85;
+  --red-orange-20: #ffcec2;
+  --red-orange-10: #ffede9;
+  
   /* Secondary Colours */
   --raspberry: #FF4495;
   --dark-lavender: #5D47D7;
@@ -48,11 +58,11 @@ code, pre {
 }
 
 p code {
-  font-size: 0.85em;
-  background-color: #1e1e2e;
-  color: #cdd6f4;
-  padding: 5px;
-  border-radius: 4px;
+  font-size: 0.98;
+  background-color: var(--red-orange-10);
+  color: var(--red-orange);
+  padding: 2px 5px;
+  border-radius: 3px;
 }
 
 pre {
@@ -62,7 +72,7 @@ pre {
 }
 
 header {
-  border-bottom: 1px solid var(--grey-two);
+  border-bottom: 2px solid var(--grey-one);
   margin-bottom: 1rem;
 }
 
@@ -134,6 +144,26 @@ a {
 
 .mostRecentBox h3 {
   text-align: center;
+}
+
+.blogPost {
+  margin: 3em 0 8em 0;
+}
+
+.metaData .authorName {
+  font-weight: bold;
+}
+
+.metaData time {
+  color: var(--grey-three);
+  font-family: "Google Sans Code", monospace;
+}
+
+.metaData hr {
+  height: 2px;
+  border: none;
+  background: linear-gradient(to right, var(--red-orange), var(--white));
+  margin: 1em 0 2.5em 0;
 }
 
 .blogPost img {

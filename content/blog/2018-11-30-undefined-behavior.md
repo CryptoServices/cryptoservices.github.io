@@ -192,7 +192,7 @@ main(int argc, char *argv[])
 
 Now let's try to compile that with GCC:
 
-```
+```console
 $ gcc -W -Wall -O9 testadd.c
 $ ./a.out 17 42
 59
@@ -203,7 +203,7 @@ overflow!
 OK, this seems to work. Let's try again with another compiler, Clang
 (version 6.0.0 on my system):
 
-```
+```console
 $ clang -W -Wall -O3 testadd.c
 $ ./a.out 17 42
 59
@@ -283,7 +283,7 @@ main(int argc, char *argv[])
 
 And then try it:
 
-```
+```console
 $ gcc -W -Wall -O testdiv.c
 $ ./a.out 42 17
 2
@@ -410,7 +410,7 @@ should.
 
 Let's try it:
 
-```
+```console
 $ g++ -W -Wall -O9 testvec.c
 $ ./a.out foo
     66 6f 6f 00 00 00 00 00 00 00 00 00 00 00 00 00 10 58 ffffffca ff
@@ -445,7 +445,7 @@ occurs.
 Amusingly, if GCC is invoked with less aggressive optimizations, it will
 warn in a quite explicit way:
 
-```
+```console
 $ g++ -W -Wall -O1 testvec.c
 testvec.c: In function ‘int main(int, char**)’:
 testvec.c:20:15: warning: iteration 16 invokes undefined behavior [-Waggressive-loop-optimizations]

@@ -1,19 +1,28 @@
 {{ define "main" }}  
   <div class="blogPost">
+
+    <div class="metaData">
     <h1>{{ .Title }}</h1>
+
+    <!-- Include author -->
+    {{ if isset .Params "author" }}
+      {{ if ne .Params.author "" }}
+        <div class="authorName">{{ .Params.author }}</div>
+      {{ end }}
+    {{ end }}
+    
 
     <!-- Include date -->
     {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
     {{ $dateHuman := .Date | time.Format ":date_long" }}
     <time datetime="{{ $dateMachine }}">{{ $dateHuman }}</time>
 
-    <!-- Include author -->
-    {{ if isset .Params "author" }}
-      {{ if ne .Params.author "" }}
-        <span>| {{ .Params.author }}</span>
-      {{ end }}
-    {{ end }}
+    <hr>
     
+    </div>
+
+    
+
     <!-- Include blogpost -->
     {{ .Content }}
   </div>
