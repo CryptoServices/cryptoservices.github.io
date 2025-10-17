@@ -3,15 +3,7 @@ title = "Talks"
 layout = "single"
 +++
 
-Some text at the top about how this is a list of our talks...
-
-- [talks one](https://google.com)
-- [talks two](https://google.com)
-- [talks three](https://google.com)
-- [talks four](https://google.com)
-- [talks five](https://google.com)
-- [talks six](https://google.com)
-- [talks seven](https://google.com)
-- [talks eight](https://google.com)
-- [talks nine](https://google.com)
-- [talks ten](https://google.com)
+- 2025-04-10: [Post-Quantum Cryptography Auditing (U30c)](https://icmconference.org/?session=post-quantum-cryptography-auditing-u30c) - [Video](https://www.youtube.com/watch?v=WzhhJcBSTss&t=3560s)
+- 2020-04-29: [Generating NTRU trapdoors the Lattice workshop talk](https://simons.berkeley.edu/talks/generating-ntru-trapdoors)
+- 2019-11: [Hardware-Backed Heist: Extracting ECDSA Keys from Qualcomm’s TrustZone](https://ccs19.swenjacobs.com/index.php/program/program-2/)
+- 2019-06: [Depressing the Crypto Economy with DoS Bugs](https://github.com/aleks-ncc/slides/blob/master/cackalackycon1.pdf)
