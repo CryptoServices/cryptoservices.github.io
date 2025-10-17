@@ -67,8 +67,7 @@ header {
 
 footer {
   background: linear-gradient(var(--blue), var(--black));
-  color: var(--white); /* Example text color */
-
+  color: var(--white);
   min-height: 150px;
 }
 
@@ -81,12 +80,18 @@ a {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .mostRecentBox {
   border: 1px solid red;
-  padding: 0 1em 1em 1em;
-  min-width: 250px;
+  padding: 0 0em 1em 0em;
+  min-width: 360px;
+}
+
+.mostRecentBox .seeMore {
+  text-align: right;
+  padding-right: 1em;
 }
 
 .mostRecentBox h3 {

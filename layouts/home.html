@@ -12,16 +12,25 @@
   </div>
 
   <div class="mostRecentBox">
+    <h3>Recent Blogposts</h3>
+      {{ partial "most_recent_blogposts.html" . }}
+  </div>
+
+  <div class="mostRecentBox">
     <h3>Recent Publications</h3>
       {{ partial "most_recent_publications.html" . }}
   </div>
 
   <div class="mostRecentBox">
-    <h3>Recent Blogposts</h3>
-      {{ partial "most_recent_blogposts.html" . }}
+    <h3>Recent Presentations</h3>
+      {{ partial "most_recent_talks.html" . }}
   </div>
 </div>
 
+<div class="aboutNCC">
+  {{ $page := .Site.GetPage "/snippets/about_ncc.md"}}
+  {{ $page.Content }}
+</div>
 
 <div class = "archiveWrapper">
   {{ partial "archive_summary.html" . }}

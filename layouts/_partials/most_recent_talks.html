@@ -1,4 +1,4 @@
-{{ $page := .Site.GetPage "publications.md" }}
+{{ $page := .Site.GetPage "talks.md" }}
 {{ if $page }}
   {{ $rawContent := $page.RawContent }}
   {{ $matches := findRESubmatch `- \[([^\]]+)\]\(([^\)]+)\)` $rawContent 5 }}
@@ -12,6 +12,6 @@
   </ul>
 
   <div class="seeMore">
-    <a href="publications/">See all publications</a>
+    <a href="talks/">See all talks</a>
   </div>
 {{ end }}
