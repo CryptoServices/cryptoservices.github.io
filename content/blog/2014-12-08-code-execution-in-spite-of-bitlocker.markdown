@@ -64,7 +64,7 @@ This is possible because we knew the location of a specific file on the disk (an
 
 The obvious question comes up when discussing disk encryption modes: why not use XTS, a mode specifically designed for disk encryption and standardized and blessed by NIST?  XTS is used in LUKS and Truecrypt, and prevents targeted bitflipping attacks.  But it's not perfect.  Let's look at what happens when we flip a single bit in ciphertext encrypted using XTS:
 
-{:.center}
+
 ![XTS Mode Bit Flipping Propagation](/images/bypassing-bitlocker/xts-edit.png)
 
 A single bit change completely scrambles the full 16 byte block of the ciphertext, there's no control over the change.  That's good, right?  It's not bad, but it's not as good as it could be.  Unfortunately, XTS was not considered in the original Elephant paper (it was relatively new in 2006), so we don't have their thoughts about it in direct comparison to Elephant. But the authors of Elephant evaluated another disk encryption mode that had the same property:
@@ -75,7 +75,7 @@ A single bit change completely scrambles the full 16 byte block of the ciphertex
 
 Furthermore, they elaborate upon this in their [comments to NIST on XTS](http://csrc.nist.gov/groups/ST/toolkit/BCM/documents/comments/XTS/collected_XTS_comments.pdf), explicitly calling out the small amount of diffusion.  A 16-byte scramble is pretty small.  It's only 3-4 assembly instructions.  To compare how XTS' diffusion compares to Elephant's, we modified a single bit on the disk of a BitLockered Windows 7 installation that corresponded to a file of all zeros.  The resulting output shows that 512 bytes (the smallest sector size in use) were modified:
 
-{:.center}
+
 ![Elephant Bit Flipping Propagation](/images/bypassing-bitlocker/elephant.png)
 
 This amount of diffusion is obviously much larger than 16 bytes.  It's also not perfect - a 512 byte scramble, in the right location, could very well result in a security bypass.  Remember, this is all 'Poor Man's Authentication' - we know the solution is not particularly strong, we're just trying to get the best we can.  But it's still a lot harder to pop calc with.

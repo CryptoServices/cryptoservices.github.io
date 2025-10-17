@@ -21,7 +21,7 @@ The drive in question had the full-disk encryption (FDE) flavour of TrueCrypt in
 Further details of the cryptography are available in the TrueCrypt documentation (which isn’t officially available any more, but you will find a version if you Google for it). Note that the user can select the encryption algorithm to be used (AES, Serpent, Twofish, or a "cascade" of multiple algorithms), and the hash algorithm to be used in generating a key from the passphrase (RIPEMD-160, SHA-512 or Whirlpool).
 Before the drive is encrypted, TrueCrypt forces the user to create a "rescue disk", which is a CD containing a copy of the original contents of the first track, plus a copy of the new contents of the first track (i.e. the TrueCrypt MBR, bootloader, and volume header). The idea is that this is kept safe (although it's of little use to an attacker in itself, without the passphrase), because it might be useful if the drive suffers any corruption. By booting the encrypted machine from the CD, the user is presented with the following four "repair" options: 
 
-{:.center}
+
 ![TrueCrypt Repair Options](/images/untrue/repair-options.png)
 
 The last three of these options simply involve copying the relevant data from the CD to the hard drive. The first one requires the user to supply the passphrase, and then uses the copy of the volume header on the CD to derive the volume encryption key, and carry out a sector-by-sector decryption of the drive.
@@ -48,14 +48,14 @@ We imaged the hard drive and the Rescue CD, then dug out some old code for decry
 
 The final sector on the first track (sector 62) of the drive looked like a TrueCrypt volume header (a full sector of random-looking data), so we tried decrypting it using the password the client had provided. Success! The default hash algorithm (RIPEMD-160) and default encryption algorithm (AES) worked, and we had a plaintext volume header (indicated by the "TRUE" signature in the first four bytes, and of course the obviously non-random nature of the data).  Here’s the volume header that we recovered (everything in the sector from 0x100 onwards is zero):
 
-{:.center}
+
 ![Recovered Volume Header](/images/untrue/hex-1.png)
 
 The volume encryption key is located at offset 0xC0 in this structure - it is 64 bytes long (that's because AES-256 requires a 32-byte key, and XTS mode requires two AES-256 keys). We extracted this key (the bytes shown above are not the real ones from the drive!), and spent some time modifying our TrueCrypt sector decryption code so that it could also run the cipher in the opposite direction (based on our assumption that the drive had been decrypted twice). We copied the first "encrypted" sector from the drive (this was the first sector on the second track, as indicated by the 0x0000000000007E00 value at offset 0x2C in the volume header, which is the byte offset of the start of the encrypted data) and ran it through our tool. The output didn't look right - it appeared to be random data, but we'd expect it to be an easily identifiable partition boot sector. Maybe we were wrong about the double-decryption thing, so we ran the tool in the normal "decryption" direction. Still nothing. We tried some different sectors from elsewhere on the drive - no luck. We tried running two decryptions, and two encryptions, without success. Maybe there was a problem with our code - XTS mode is pretty fiddly, and you have to make sure that you get the sector index parameter right. Trying some different values for that didn't help. We installed TrueCrypt in a VM, and replicated the double-decryption scenario as closely as we could. Our approach - and the sector decryption code - worked fine on that. 
 
 All very strange, and rather frustrating to have possession of the volume encryption key, but be unable to recover the original data. Running out of ideas, we took a look at the contents of the TrueCrypt Rescue CD that had been supplied. There's a single file on there, and it starts with a backup of the TrueCrypt boot loader and volume header (i.e. the first 63 sectors from the drive). This volume header wasn't the same as the one we had previously decrypted, so just to check, we ran the volume header decryptor again, with the same password, and once again it succeeded:
 
-{:.center}
+
 ![Recovered Volume Header](/images/untrue/hex-2.png)
 
 The volume encryption key from this header was different, which was unexpected. Of course, we immediately tried encrypting our first "encrypted" sector using this key, and - predictably enough, given how much time we had wasted messing around with the first key - it worked first time. The plaintext (or ciphertext, or whatever we should be calling it at this point!) was obviously a FAT boot sector (for an OEM recovery partition on the drive), and very pleased to see it we were too.
@@ -80,7 +80,7 @@ The story didn't quite end there... when we triumphantly loaded the recovered di
 
 The hibernation file was our saviour. We found the MFT entry for hiberfil.sys (this hadn't been corrupted, as it isn't one of the first four entries in the MFT). The timestamps in this MFT entry suggested that the laptop had been hibernated very recently. Surely the first entry in the MFT would have been in RAM when the system was hibernated? (e.g. in the NTFS driver's pool, amongst other places). Using the run data in the MFT entry, we were able to manually extract the hibernation file, and decompress it using the fantastic [Volatility framework](https://github.com/volatilityfoundation/volatility). Searching through the resultant memory dump for MFT entries with a file number of zero (simple enough, given that MFT entries start with a "FILE0" signature, and have their file number at offset 0x2C) we found what we were looking for - the $MFT entry, with the all-important information about the MFT's "runs" at bytes 0x140-0x178.
 
-{:.center}
+
 ![$MFT Entry](/images/untrue/hex-3.png)
 
 After patching this in to the correct place in the disk image, the forensic tools were happy again, and we were done.
