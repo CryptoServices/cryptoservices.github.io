@@ -1,10 +1,15 @@
-{{ $blogPosts := where .Site.RegularPages "Section" "blog" }}
-{{ $recentPosts := first 5 (sort $blogPosts "Date" "desc") }}
+{{ $page := .Site.GetPage "blogposts.md" }}
+{{ if $page }}
+  {{ $rawContent := $page.RawContent }}
+  {{ $matches := findRESubmatch `- \[([^\]]+)\]\(([^\)]+)\)` $rawContent 5 }}
 
-<ul>
-{{ range $recentPosts }}
-    <li><a href="{{ .RelPermalink }}" target="_blank">{{ .Title }}</a></li>
+  <ul>
+    {{ range $matches }}
+      {{ $text := index . 1 }}
+      {{ $url := index . 2 }}
+      <li><a href="{{ $url }}" target="_blank">{{ $text }}</a></li>
+    {{ end }}
+  </ul>
+
+  <a href="blogposts/">See all blogposts</a>
 {{ end }}
-</ul>
-
-<a href="blog/">See all blogposts</a>

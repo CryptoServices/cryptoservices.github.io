@@ -32,6 +32,11 @@ body {
   margin: 0;
 }
 
+main {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
 a, a:hover, a:visited {
   color: var(--blue);
 }
@@ -61,11 +66,29 @@ header {
 }
 
 footer {
-  border-top: 1px solid #222;
-  margin-top: 1rem;
+  background: linear-gradient(var(--blue), var(--black));
+  color: var(--white); /* Example text color */
+
+  min-height: 150px;
 }
 
 a {
   color: #00e;
   text-decoration: none;
+}
+
+.mostRecentWrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.mostRecentBox {
+  border: 1px solid red;
+  padding: 0 1em 1em 1em;
+  min-width: 250px;
+}
+
+.mostRecentBox h3 {
+  text-align: center;
 }

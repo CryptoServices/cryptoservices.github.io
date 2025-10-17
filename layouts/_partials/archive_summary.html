@@ -1,0 +1,24 @@
+{{ $blogPosts := where .Site.RegularPages "Section" "blog" }}
+{{ $recentPosts := sort $blogPosts "Date" "desc" }}
+
+<h3>Archive (2019 and before)</h3>
+
+Below is a list of blog post and research from 2019 and before:
+
+
+{{ $currentYear := "" }}
+{{ range $recentPosts }}
+    {{ $postYear := .Date.Format "2006" }}
+    {{ if ne $postYear $currentYear }}
+      {{ $currentYear = $postYear}}
+      {{ if ne $currentYear "" }}
+      </ul>
+      {{ end }}
+      <h4>{{ $currentYear }}</h4>
+      <ul>
+    {{ end }}
+        <li>
+          <a href="{{ .RelPermalink }}" target="_blank">{{ .Title }}</a>
+        </li>
+{{ end }}
+      </ul>

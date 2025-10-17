@@ -7,21 +7,25 @@
 
 <div class="mostRecentWrapper">
   <div class="mostRecentBox">
-    <h3>Most Recent Reports</h3>
+    <h3>Recent Reports</h3>
       {{ partial "most_recent_reports.html" . }}
   </div>
 
-    <div class="mostRecentBox">
-    <h3>Most Recent Publications</h3>
+  <div class="mostRecentBox">
+    <h3>Recent Publications</h3>
       {{ partial "most_recent_publications.html" . }}
   </div>
 
-    <div class="mostRecentBox">
-    <h3>Most Recent Blogposts</h3>
+  <div class="mostRecentBox">
+    <h3>Recent Blogposts</h3>
       {{ partial "most_recent_blogposts.html" . }}
   </div>
 </div>
 
+
+<div class = "archiveWrapper">
+  {{ partial "archive_summary.html" . }}
+</div>
 
 
 {{ end }}
