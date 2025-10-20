@@ -56,9 +56,7 @@ This type of fine-grained control is exactly what Poor Man's Authentication is d
 
 But what bits do we flip?  If the disk is encrypted, don't we lack any idea of where anything interesting is stored?  Yes and no.  In our testing, two installations of Windows 8 onto the same format of machine put the system DLLs in identical locations.  This behavior is far from guarenteed, but if we do know where a file is expected to be, perhaps through educated guesswork and installing the OS on the same physical hardware, then we will know the location, the ciphertext, and the plaintext.  And at that point, we can do more than just flip bits, we can completely rewrite what will be decrypted upon startup.  This lets us do much more than what people have suggested around changing a branch condition: we just write arbitrary assembly code.  So we did.  Below is a short video that shows booting up a Virtual Machine showing a normal unmodified BitLockered disk on Windows 8, shutting it down and modifying the ciphertext on the underlying disk, starting it back up, and achieving arbitrary code execution.
 
-<div style="text-align:center">
-	<iframe width="560" height="315" src="//www.youtube.com/embed/BGxiJ8hpwvo" frameborder="0" allowfullscreen></iframe>
-</div>
+{{< youtube BGxiJ8hpwvo >}}
 
 This is possible because we knew the location of a specific file on the disk (and therefore the plaintext), calculated what ciphertext would be necessary to write out desired shellcode, and wrote it onto the disk. (The particular file we chose did move around during installation, so we did 'cheat' a little - with more time investment, we could change our target to a system dll that hasn't been patched in Windows Updates or moved since installation.)  Upon decryption, 16 bytes were garbled, but we chose the position and assembly code carefully such that the garbled blocks were always skipped over.  To give credit where others have demonstrated similar work, this is actually the same type of attack that Jakob Lell demonstrated against [LUKS partitions last year](http://www.jakoblell.com/blog/2013/12/22/practical-malleability-attack-against-cbc-encrypted-luks-partitions/).  
 
