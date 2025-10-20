@@ -46,7 +46,7 @@ body {
 
 main {
   max-width: 800px;
-  margin: 0 auto;
+  margin: 3em auto 6em auto;
   min-height: calc(100vh - 300px)
 }
 
@@ -95,6 +95,7 @@ header {
 .rightHeader {
   font-weight: bold;
   font-size: 1.5em;
+  text-align: right;
 }
 
 footer {
@@ -128,25 +129,22 @@ a {
 
 .mostRecentWrapper {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
   flex-wrap: wrap;
-}
-
-.mostRecentBox {
-  border: 1px solid red;
-  padding: 0 0em 1em 0em;
-  min-width: 360px;
 }
 
 .mostRecentBox .seeMore {
   text-align: right;
   padding-right: 1em;
+  margin-top: 2em;
 }
 
-.mostRecentBox h3 {
-  text-align: center;
-}
+/* .mostRecentBox .seeMore a,
+.mostRecentBox .seeMore a:hover,
+.mostRecentBox .seeMore a:visited {
+  
+} */
 
 .blogPost {
   margin: 3em 0 8em 0;
@@ -201,6 +199,14 @@ a {
   border: none;
   background: linear-gradient(to right, var(--grey-two), var(--grey-one));
 }
+
+hr.mainHr {
+  margin: 3em 0;
+  height: 2px;
+  border: none;
+  background: linear-gradient(to right, var(--white), var(--red-orange), var(--white));
+}
+
 
 /* Table design */
 

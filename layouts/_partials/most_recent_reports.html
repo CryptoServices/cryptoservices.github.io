@@ -1,13 +1,21 @@
 {{ $page := .Site.GetPage "reports.md" }}
+{{ $maxResults := 10 }}
+{{ $count := 0 }}
+
 {{ if $page }}
-  {{ $rawContent := $page.RawContent }}
-  {{ $matches := findRESubmatch `- \[([^\]]+)\]\(([^\)]+)\)` $rawContent 5 }}
+  {{ $lines := split $page.RawContent "\n" }}
 
   <ul>
-    {{ range $matches }}
-      {{ $text := index . 1 }}
-      {{ $url := index . 2 }}
-      <li><a href="{{ $url }}" target="_blank">{{ $text }}</a></li>
+    {{ range $lines }}
+      {{ if and (lt $count $maxResults) (hasPrefix . "- ") }}
+        {{ $pattern := `\[(.*?)\]\((.*?)\)` }}
+        {{ $matches := findRESubmatch $pattern . 1 }}
+
+        {{ if $matches }}
+          {{ $count = add $count 1 }}
+          <li><a href="{{ index $matches 0 2 }}" target="_blank">{{ index $matches 0 1 }}</a></li>
+        {{ end }}
+      {{ end }}
     {{ end }}
   </ul>
 
