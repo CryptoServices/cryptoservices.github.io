@@ -37,15 +37,11 @@ that the honest chain grows the longest, assuming that 51% or less of the
 miners are malicious. Therefore, the longest chain can be considered to be
 the chain with the most invested Proof-of-Work:
 
-<p align="center">
-  <img src="/images/bitcoin-length-weight-confusion/bitcoin-paper-1.png" width="700" title="">
-</p>
+![quote from bitcoin paper](/images/bitcoin-length-weight-confusion/bitcoin-paper-1.png)
 
 and later:
 
-<p align="center">
-  <img src="/images/bitcoin-length-weight-confusion/bitcoin-paper-2.png" width="700" title="">
-</p>
+![quote from bitcoin paper](/images/bitcoin-length-weight-confusion/bitcoin-paper-2.png)
 
 However, this conflation of "longest" with "greatest proof-of-work" is false,
 and reaching consensus by purely selecting the longest chain is not safe.
@@ -76,9 +72,7 @@ required to understand the two attacks outlined in this post. First, let's take
 a look at how the work in Proof-of-Work is created:
 
 
-<p align="center">
-  <img src="/images/bitcoin-length-weight-confusion/hashcash.png" width="700" title="">
-</p>
+![hashcash algorithm](/images/bitcoin-length-weight-confusion/hashcash.png)
 
 
 Miners on a Proof-of-Work chain want to create a block that meets the difficulty
@@ -187,7 +181,7 @@ required to produce the chain, and select the chain with the highest cumulative
 work. In the case of Bitcoin and other Proof-of-Work cryptocurrencies that use an `nBits`
 target threshold, this can be computed by taking:
 
-```
+```cpp
 sum(chain):
     work := 0
     for each block in chain:

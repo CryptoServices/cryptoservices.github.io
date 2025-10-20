@@ -18,6 +18,7 @@
   --blue-60: #404dff;
   --blue-40: #8088ff;
   --blue-20: #bfc3ff;
+  --blue-10: #eaebff;
 
   --red-orange: #FF3B0B;
   --red-orange-80: #ff3b0a;
@@ -159,7 +160,7 @@ a {
   font-family: "Google Sans Code", monospace;
 }
 
-.metaData hr {
+.blogPost .metaData hr {
   height: 2px;
   border: none;
   background: linear-gradient(to right, var(--red-orange), var(--white));
@@ -170,7 +171,81 @@ a {
   max-width: 100%;
 }
 
+.blogPost p {
+  line-height: 1.4em;
+}
+
 .blogPost p:has(> img:only-child),
 .blogPost p:has(> img:first-child:last-child) { /* older browsers may not support :has */
   text-align: center;
+}
+
+.blogPost blockquote {
+  margin-left: 1em;
+  padding-left: 1em;
+  color: var(--grey-three);
+
+  border-style: solid;
+  border-width: 0 0 0 4px;
+  border-image: linear-gradient(to bottom, var(--blue), var(--white)) 1;
+
+}
+
+.blogPost hr {
+  height: 2px;
+  border: none;
+  background: linear-gradient(to right, var(--grey-two), var(--grey-one));
+}
+
+/* Table design */
+
+table {
+  width: 100%;
+  margin: 20px 0;
+  border-collapse: collapse;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+th {
+  background-color: var(--blue);
+  color: white;
+  padding: 0.8em; 
+  text-align: center;
+  font-weight: bold;
+}
+
+td {
+  background-color: var;
+  padding: 0.8em; 
+  border-bottom: 1px solid var(--grey-two);
+}
+
+tr:hover td {
+  background-color: var(--blue-10);
+}
+
+tr:last-child td {
+  border-bottom: none;
+}
+
+@media (max-width: 600px) {
+  table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+}
+
+/* Small Screens */
+
+/* Styles for viewports 800px or less */
+@media (max-width: 800px) {
+    .headerContents {
+      margin: 0 1em;
+    }
+    main {
+      margin: 0 1em;
+    }
 }
