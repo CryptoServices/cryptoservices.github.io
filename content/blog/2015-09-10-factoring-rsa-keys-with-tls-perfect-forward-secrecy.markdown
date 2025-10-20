@@ -26,42 +26,33 @@ This is interesting, the oldest passive form of *Accidental Fault Attack* I can 
 
 Any library that uses the CRT optimization for RSA might be vulnerable. A cheap countermeasure would be to verify the signature after computing it, which is what most libraries do. The paper has a nice list of who is doing that.
 
-<table>
-<thead>
-<tr><td>Implementation</td><td>Verification</td></tr>
-</thead>
-<tbody>
-<tr><td>cryptlib 3.4.2</td><td>disabled by default</td></tr>
-<tr><td>GnuPG 1.4.1.8</td><td>yes</td></tr>
-<tr><td>GNUTLS</td><td>see libgcrypt and Nettle</td></tr>
-<tr><td>Go 1.4.1</td><td>no</td></tr>
-<tr><td>libgcrypt 1.6.2</td><td>no</td></tr>
-<tr><td>Nettle 3.0.0</td><td>no</td></tr>
-<tr><td>NSS</td><td>yes</td></tr>
-<tr><td>ocaml-nocrypto 0.5.1</td><td>no</td></tr>
-<tr><td>OpenJDK 8</td><td>yes</td></tr>
-<tr><td>OpenSSL 1.0.1l</td><td>yes</td></tr>
-<tr><td>OpenSwan 2.6.44</td><td>no</td></tr>
-<tr><td>PolarSSL 1.3.9</td><td>no</td></tr>
-</tbody>
-</table>
+| Implementation       | Verification             |
+|----------------------|--------------------------|
+| cryptlib 3.4.2       | disabled by default      |
+| GnuPG 1.4.1.8        | yes                      |
+| GNUTLS               | see libgcrypt and Nettle |
+| Go 1.4.1             | no                       |
+| libgcrypt 1.6.2      | no                       |
+| Nettle 3.0.0         | no                       |
+| NSS                  | yes                      |
+| ocaml-nocrypto 0.5.1 | no                       |
+| OpenJDK 8            | yes                      |
+| OpenSSL 1.0.1l       | yes                      |
+| OpenSwan 2.6.44      | no                       |
+| PolarSSL 1.3.9       | no                       |
 
 But is it about what library you are using? Your server still has to be defective to produce a fault. The paper also have a nice table displaying what vendors, in their experiments, where most prone to have this vulnerability.
-<table>
-<thead>
-<tr><td>Vendor</td><td>Keys</td><td>PKI</td><td>Rate</td></tr>
-</thead>
-<tbody>
-<tr><td>Citrix</td><td>2</td><td>yes</td><td>medium</td></tr>
-<tr><td>Hillstone Networks</td><td>237</td><td>no</td><td>low</td></tr>
-<tr><td>Alteon/Nortel</td><td>2</td><td>no</td><td>high</td></tr>
-<tr><td>Viprinet</td><td>1</td><td>no</td><td>always</td></tr>
-<tr><td>QNO</td><td>3</td><td>no</td><td>medium</td></tr>
-<tr><td>ZyXEL</td><td>26</td><td>no</td><td>low</td></tr>
-<tr><td>BEJY</td><td>1</td><td>yes</td><td>low</td></tr>
-<tr><td>Fortinet</td><td>2</td><td>no</td><td>very low</td></tr>
-</tbody>
-</table>
+
+| Vendor             | Keys | PKI | Rate     |
+|--------------------|------|-----|----------|
+| Citrix             | 2    | yes | medium   |
+| Hillstone Networks | 237  | no  | low      |
+| Alteon/Nortel      | 2    | no  | high     |
+| Viprinet           | 1    | no  | always   |
+| QNO                | 3    | no  | medium   |
+| ZyXEL              | 26   | no  | low      |
+| BEJY               | 1    | yes | low      |
+| Fortinet           | 2    | no  | very low |
 
 If you're using one of these you might want to check with your vendor if a firmware update or other solutions were talked about after the discovery of this attack. You might also want to revoke your keys.
 
@@ -94,8 +85,6 @@ Remember, RSA signature is basically \\(y = x^d \pmod{n}\\) with \\(x\\) the mes
 CRT is short for Chinese Remainder Theorem (I should have said that earlier). It's an optimization that allows to compute the signatures in \\(\mathbb{Z}\_p\\) and \\(\mathbb{Z}\_q\\) and then combine it into \\(\mathbb{Z}\_n\\) (remember \\(n = pq\\)). It's way faster like that.
 
 So basically what you do is:
-
-
 
 \\[ \begin{cases} y\_p = x^d \pmod{p} \\\\ y\_q = x^d \pmod{q} \end{cases} \\]
 
@@ -135,13 +124,13 @@ The attack could potentially work on anything that display a RSA signature. But 
 
 A normal TLS handshake is a two round trip protocol that looks like this:
 
-![normal_tls_handshake](http://i.imgur.com/VcYhMv1.png)
+![normal_tls_handshake](/images/factoring/factoring-1.png)
 
 The client (the first person who speaks) first sends a *helloClient* packet. A thing filled with bytes saying things like "this is a handshake", "this is TLS version 1.0", "I can use this algorithm for the handshake", "I can use this algorithm for encrypting our communications", etc...
 
 Here's what it looks like in Wireshark:
 
-![client hello](http://i.imgur.com/EYYKmXm.png)
+![client hello](/images/factoring/factoring-2.png)
 
 The server (the second person who speaks) replies with 3 messages: a similar *ServerHello*, a message with his *certificate* (and that's how we authenticate the server) and a *ServerHelloDone* message only consisting of a few bytes saying "I'm done here!".
 
@@ -149,7 +138,7 @@ A second round trip is then done where the client encrypts a key with the server
 
 Another kind of handshake can be performed if both the client and the server accepts ephemeral key exchange algorithms (Diffie-Hellman or Elliptic Curve Diffie-Hellman). This is to provide *Perfect Forward Secrecy*: if the conversations are recorded by a third party, and the private key of the server is later recovered, nothing will be compromised. Instead of using the server's public key to compute the shared key, the server will generate a *ephemeral* public key and use it to perform an *ephemeral handshake*. This key is usually used just for this session or occasionally for a limited number of sessions.
 
-![ephemeral_handshake](http://i.imgur.com/gEkuTiq.png)
+![ephemeral_handshake](/images/factoring/factoring-3.png)
 
 When this occurs, an extra packet called **ServerKeyExchange** is sent. It contains the server's ephemeral public key.
 
