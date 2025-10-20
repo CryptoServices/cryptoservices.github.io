@@ -1,3 +1,3 @@
 +++
-title = "Blog Title Here"
+title = "Cryptography Services Blog Archive"
 +++

@@ -31,4 +31,4 @@ Course requirements are minimal.  We've targeted it at students who have a stron
 
 Some experience programming is recommended - please bring a laptop prepared with an environment you're comfortable with, and with Python 2.7 installed. You don't have to program in Python, but the exercises are in Python and it does make it easier. 
 
-Space is limited of course - we won't exceed our capability to work with people individually.  We've priced the course competitively at **\$2500/person before October 31st**, and \$3000 after. Group discounts are available. To reserve your seat contact us at <a href="mailto:CryptographyServices@nccgroup.com">CryptographyServices@nccgroup.com</a>.
+Space is limited of course - we won't exceed our capability to work with people individually.  We've priced the course competitively at **\$2500/person before October 31st**, and \$3000 after. Group discounts are available. To reserve your seat contact us at [CryptographyServices@nccgroup.com<](mailto:CryptographyServices@nccgroup.com).

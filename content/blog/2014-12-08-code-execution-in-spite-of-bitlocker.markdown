@@ -64,12 +64,11 @@ This is possible because we knew the location of a specific file on the disk (an
 
 The obvious question comes up when discussing disk encryption modes: why not use XTS, a mode specifically designed for disk encryption and standardized and blessed by NIST?  XTS is used in LUKS and Truecrypt, and prevents targeted bitflipping attacks.  But it's not perfect.  Let's look at what happens when we flip a single bit in ciphertext encrypted using XTS:
 
-
 ![XTS Mode Bit Flipping Propagation](/images/bypassing-bitlocker/xts-edit.png)
 
 A single bit change completely scrambles the full 16 byte block of the ciphertext, there's no control over the change.  That's good, right?  It's not bad, but it's not as good as it could be.  Unfortunately, XTS was not considered in the original Elephant paper (it was relatively new in 2006), so we don't have their thoughts about it in direct comparison to Elephant. But the authors of Elephant evaluated another disk encryption mode that had the same property:
 
-> LRW provides some level of poor-man’s authentication, but the relatively small block size of AES (16 bytes) still leaves a lot of freedom for an attacker. For example, there could be a configuration file (or registry entry) with a value that, when set to 0, creates a security hole in the OS. On disk the setting looks something like "enableSomeSecuritySetting=1". If the start of the value falls on a 16-byte boundary and the attacker randomizes the plaintext value, there is a 2<sup>−16</sup> chance that the first two bytes of the plaintext will be 0x30 0x00 which is a string that encodes the ASCII value ’0’.
+> LRW provides some level of poor-man’s authentication, but the relatively small block size of AES (16 bytes) still leaves a lot of freedom for an attacker. For example, there could be a configuration file (or registry entry) with a value that, when set to 0, creates a security hole in the OS. On disk the setting looks something like "enableSomeSecuritySetting=1". If the start of the value falls on a 16-byte boundary and the attacker randomizes the plaintext value, there is a $2^{−16}$ chance that the first two bytes of the plaintext will be 0x30 0x00 which is a string that encodes the ASCII value ’0’.
 > 
 > For BitLocker we want a block cipher whose block size is much larger. 
 

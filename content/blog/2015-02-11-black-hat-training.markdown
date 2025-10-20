@@ -3,7 +3,7 @@ layout: "post"
 title:  "CS Debuts Crypto Training at Black Hat"
 date:   2015-02-11 13:56:07
 categories: training 
-excerpt: "Cryptography Services will be debuting our Crypto Training Course: <a href='https://www.blackhat.com/us-15/training/beyond-the-beast-deep-dives-into-crypto-vulnerabilities.html'>Beyond the Beast: Deep Dives into Crypto Vulnerabilities</a> at Black Hat Vegas this summer."
+excerpt: "Cryptography Services will be debuting our Crypto Training Course: [Beyond the Beast: Deep Dives into Crypto Vulnerabilities](https://www.blackhat.com/us-15/training/beyond-the-beast-deep-dives-into-crypto-vulnerabilities.html) at Black Hat Vegas this summer."
 aliases:
  - /training/2015/02/11/black-hat-training.html
 ---
