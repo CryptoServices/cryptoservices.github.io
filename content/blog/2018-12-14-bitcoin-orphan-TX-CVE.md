@@ -26,7 +26,7 @@ The first requirement in the list mandates having a data structure which keeps a
 
 This is what the Bitcoin client's `mapOrphanBlocks` and `mapOrphanBlocksByPrev` maps do, see the [source code](https://github.com/bitcoin/bitcoin/blob/v0.6.0/src/main.cpp#L170)  for Bitcoin 0.6.0 relevant to the attacks discussed in this post. In particular: 
 
-~~~
+~~~cpp
 map<uint256, CDataStream*> mapOrphanTransactions;
 multimap<uint256, CDataStream*> mapOrphanTransactionsByPrev;
 
@@ -47,9 +47,7 @@ void AddOrphanTx(const CDataStream& vMsg)
 
 ~~~
 
-<p align="center">
-  <img src="/images/bitcoin-orphan-tx-cve/orphans-0.png" width="700" title="hover text">
-</p>
+![](/images/bitcoin-orphan-tx-cve/orphans-0.png)
 
 Given the `mapOrphanTransactionByPrev` map, when a new transaction arrives and is accepted to the mempool, it is now easy to look up what orphan transactions depend on it. Suppose that `orphan-tx-hash_3` (colored in red on the picture) is currently stored as orphan. Now assume its parent transaction `parent-tx-hash_2` arrives and is deemed to be valid. Since `orphan-tx-hash_3` depends only on `parent-tx-hash_2`, it can be unorphaned and erased from the orphan memory store. Now `orphan-tx-hash_3` is regarded as a new transaction that may unorphan other orphan transactions. The recursive unorphaning algorithm implemented in a form of a loop is [here](https://github.com/bitcoin/bitcoin/blob/v0.6.0/src/main.cpp#L2541). 
 
@@ -74,7 +72,7 @@ was added by introducing an orphan ejection policy: an old orphan is randomly ch
 
 The function that ejects/deletes orphans is here:
 
-~~~
+~~~cpp
 void static EraseOrphanTx(uint256 hash)
 {
     if (!mapOrphanTransactions.count(hash))
@@ -113,9 +111,7 @@ A transaction can't repeat parent transaction entries, however, an orphan transa
 output indexes. Consider what happens if the victim client ends up with the `mapOrphanTransactionsByPrev` store in the state
 described by the *left* side of the picture:
 
-<p align="center">
-  <img src="/images/bitcoin-orphan-tx-cve/orphans-1.png" width="900" title="hover text">
-</p>
+![](/images/bitcoin-orphan-tx-cve/orphans-1.png)
 
 The right column in the left side of the picture is basically one (non-existent) transaction repeated with different output indexes. 
 All of the 10000 orphans point to the same (unknown) transaction. Suppose the client now needs to  delete `orphan-tx_2-hash`. 

@@ -151,6 +151,10 @@ a {
   margin: 3em 0 8em 0;
 }
 
+.blogPost ul {
+  line-height: 1.6;
+}
+
 .metaData .authorName {
   font-weight: bold;
 }
