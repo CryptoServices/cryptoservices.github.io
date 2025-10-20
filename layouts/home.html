@@ -31,6 +31,13 @@
 
 <hr class="mainHr">
 
+<div class="projects">
+  {{ $page := .Site.GetPage "/snippets/projects.md"}}
+  {{ $page.Content }}
+</div>
+
+<hr class="mainHr">
+
 <div class="aboutNCC">
   {{ $page := .Site.GetPage "/snippets/about_ncc.md"}}
   {{ $page.Content }}
