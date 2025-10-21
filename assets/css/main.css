@@ -31,7 +31,7 @@
   /* Secondary Colours */
   --raspberry: #FF4495;
   --dark-lavender: #5D47D7;
-  --blue-calico: #86CDF2;
+  --blue-calico: #86CDF2;  
 }
 
 body {
@@ -86,18 +86,18 @@ main {
   background-color: var(--white);
   padding: 7px 11px;
   border-radius: 5px;
-  border: 3px solid var(--red-orange);
+  border: 3px solid var(--blue-60);
   transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 .seeMoreButton:hover {
-  background-color: var(--red-orange);
+  background-color: var(--blue-60);
 }
 
 .seeMore a,
 .seeMore a:hover,
 .seeMore a:visited {
-  color: var(--red-orange);
+  color: var(--blue-60);
   font-weight: bold;
 }
 
@@ -107,8 +107,14 @@ main {
   transition: color ease 0.3;
 }
 
-a, a:hover, a:visited {
+a,
+a:visited {
   color: var(--blue);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--blue-60);
 }
 
 code, pre {
@@ -179,11 +185,6 @@ footer {
   text-align: left;
   max-width: 400px;
   font-size: 0.85em;
-}
-
-a {
-  color: #00e;
-  text-decoration: none;
 }
 
 .blogPost {
