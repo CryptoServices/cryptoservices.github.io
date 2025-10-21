@@ -86,7 +86,7 @@ main {
   background-color: var(--white);
   padding: 7px 11px;
   border-radius: 5px;
-  border: 3px solid var(--blue-60);
+  border: 2px solid var(--blue-60);
   transition: background-color 0.2s ease, color 0.2s ease;
 }
 
