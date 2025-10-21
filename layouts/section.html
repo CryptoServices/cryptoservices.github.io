@@ -1,8 +1,19 @@
 {{ define "main" }}
+ <div class="singleContent">
+
   <h1>{{ .Title }}</h1>
   {{ .Content }}
+  {{ $currentYear := "" }}
   {{ range .Pages }}
-    <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
+    {{ $postYear := .Date.Format "2006" }}
+    {{ if ne $postYear $currentYear }}
+        {{ $currentYear = $postYear}}
+        <h2 class="blogPostYear">{{ $postYear }}</h2>
+        <hr class="blogPostYearHr">
+    {{ end }}
+    <h3><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h3>
     {{ .Params.excerpt | markdownify }}
   {{ end }}
+
+ </div>
 {{ end }}

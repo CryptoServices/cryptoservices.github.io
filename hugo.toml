@@ -1,4 +1,4 @@
-baseURL = 'https://cryptoservices.github.io'
+baseURL = 'http://something-working-ncc.surge.sh'
 languageCode = 'en-us'
 title = 'NCC Group | Cryptography Services'
 

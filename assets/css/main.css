@@ -76,13 +76,36 @@ main {
   flex-wrap: wrap;
 }
 
-.mostRecentBox .seeMore {
+.seeMore {
   text-align: right;
-  padding-right: 1em;
-  margin-top: 2em;
+  margin: 2em 0
 }
 
+.seeMoreButton {
+  display: inline;
+  background-color: var(--white);
+  padding: 7px 11px;
+  border-radius: 5px;
+  border: 3px solid var(--red-orange);
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
 
+.seeMoreButton:hover {
+  background-color: var(--red-orange);
+}
+
+.seeMore a,
+.seeMore a:hover,
+.seeMore a:visited {
+  color: var(--red-orange);
+  font-weight: bold;
+}
+
+.seeMore a:hover{
+  color: var(--white);
+  font-weight: bold;
+  transition: color ease 0.3;
+}
 
 a, a:hover, a:visited {
   color: var(--blue);
@@ -166,6 +189,19 @@ a {
 .blogPost {
   max-width: 800px;
   margin: 3em auto 8em auto;
+}
+
+.blogPostYear{
+  text-align: right;
+  margin-top: 3em;
+  margin-bottom: 0;
+}
+
+.blogPostYearHr {
+  border: none;
+  height: 2px;
+  background: linear-gradient(to left, var(--red-orange), var(--white));
+  margin-bottom: 1em;
 }
 
 .blogPost ul {
