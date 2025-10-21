@@ -3,7 +3,7 @@ title = "Blogposts"
 layout = "single"
 +++
 
-For our most recent blogposts see the list of posts tagged with Cryptography on [todo](todo) as well as our [blog archives todo](todo).
+For our most recent blogposts, see the list of posts tagged with "Cryptography" on [NCC Group's Research blog](https://www.nccgroup.com/research-blog/?category=18140) as well as our [blog archives todo](todo).
 
 - 2025-03-10: [Announcing the Cryptopals Guided Tour Video 18: Implement CTR](https://www.nccgroup.com/research-blog/announcing-the-cryptopals-guided-tour-video-18-implement-ctr/) - [youtube.com](https://www.youtube.com/watch?v=bSfUKWF6gLo&list=PLWvDpnCcem1P6i8pZm2x7KHp5iaxwrK_P&index=18)
 - 2025-02-19: [Technical Advisory – Hash Denial-of-Service Attack in Multiple QUIC Implementations](https://www.nccgroup.com/research-blog/technical-advisory-hash-denial-of-service-attack-in-multiple-quic-implementations/)
