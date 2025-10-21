@@ -1,53 +1,73 @@
 {{ define "main" }}
 
-<div class="aboutUs">
-  {{ $page := .Site.GetPage "/snippets/about.md"}}
-  {{ $page.Content }}
-</div>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const big = document.getElementById('bigScreenData');
+    const little = document.getElementById('littleScreenData');
+    if (!big || !little) return;
 
-<hr class="mainHr">
+    little.innerHTML = ''; // clear existing
+    const divs = big.querySelectorAll(':scope > div'); // direct child divs
+    divs.forEach(d => little.appendChild(d.cloneNode(true)));
+  });
+</script>
 
-<div class="mostRecentWrapper">
-  <div class="mostRecentBox">
-    <h2>Recent Reports</h2>
-      {{ partial "most_recent_reports.html" . }}
+<div class="columnWrap">
+
+  <div class="leftCol">
+    <div class="aboutUs">
+      {{ $page := .Site.GetPage "/snippets/about.md"}}
+      {{ $page.Content }}
+    </div>
+
+    <div class="recentOutput" id="littleScreenData">
+
+    </div>
+
+    <div class="projects">
+        {{ $page := .Site.GetPage "/snippets/projects.md"}}
+        {{ $page.Content }}
+    </div>
+
+    <div class="aboutNCC">
+        {{ $page := .Site.GetPage "/snippets/about_ncc.md"}}
+        {{ $page.Content }}
+    </div>
+
+    <div class = "archiveWrapper">
+        {{ partial "archive_summary.html" . }}
+    </div>
   </div>
 
-  <div class="mostRecentBox">
-    <h2>Recent Publications</h2>
-      {{ partial "most_recent_publications.html" . }}
+  <div class="rightCol" id="bigScreenData">
+    <div class="mostRecentWrapper">
+      <h2>Recent Publications</h2>
+
+      <div class="mostRecentBox">
+        <h3>Public Reports</h3>
+          {{ partial "most_recent_reports.html" . }}
+      </div>
+
+      <div class="mostRecentBox">
+        <h3>Research Papers</h3>
+          {{ partial "most_recent_publications.html" . }}
+      </div>
+
+      <div class="mostRecentBox">
+        <h3>Blogposts</h3>
+          {{ partial "most_recent_blogposts.html" . }}
+      </div>
+
+      <div class="mostRecentBox">
+        <h3>Presentations</h3>
+          {{ partial "most_recent_talks.html" . }}
+      </div>
+    </div>
   </div>
-
-  <div class="mostRecentBox">
-    <h2>Recent Blogposts</h2>
-      {{ partial "most_recent_blogposts.html" . }}
-  </div>
-
-  <div class="mostRecentBox">
-    <h2>Recent Presentations</h2>
-      {{ partial "most_recent_talks.html" . }}
-  </div>
 </div>
 
-<hr class="mainHr">
 
-<div class="projects">
-  {{ $page := .Site.GetPage "/snippets/projects.md"}}
-  {{ $page.Content }}
-</div>
 
-<hr class="mainHr">
-
-<div class="aboutNCC">
-  {{ $page := .Site.GetPage "/snippets/about_ncc.md"}}
-  {{ $page.Content }}
-</div>
-
-<hr class="mainHr">
-
-<div class = "archiveWrapper">
-  {{ partial "archive_summary.html" . }}
-</div>
 
 
 {{ end }}

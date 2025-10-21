@@ -45,10 +45,44 @@ body {
 }
 
 main {
-  max-width: 800px;
   margin: 3em auto 6em auto;
   min-height: calc(100vh - 300px)
 }
+
+  .singleContent {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+.columnWrap {
+  max-width: 1200px;
+  margin:  0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.leftCol {
+  max-width: 650px;
+}
+
+.rightCol {
+  width: 500px;
+}
+
+.mostRecentWrapper {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.mostRecentBox .seeMore {
+  text-align: right;
+  padding-right: 1em;
+  margin-top: 2em;
+}
+
+
 
 a, a:hover, a:visited {
   color: var(--blue);
@@ -84,7 +118,7 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 2em 0;
-  max-width: 800px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
@@ -110,7 +144,7 @@ footer {
   justify-content: space-between;
   align-items: center;
   padding: 2em 0;
-  max-width: 800px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
@@ -129,27 +163,9 @@ a {
   text-decoration: none;
 }
 
-.mostRecentWrapper {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
-
-.mostRecentBox .seeMore {
-  text-align: right;
-  padding-right: 1em;
-  margin-top: 2em;
-}
-
-/* .mostRecentBox .seeMore a,
-.mostRecentBox .seeMore a:hover,
-.mostRecentBox .seeMore a:visited {
-  
-} */
-
 .blogPost {
-  margin: 3em 0 8em 0;
+  max-width: 800px;
+  margin: 3em auto 8em auto;
 }
 
 .blogPost ul {
@@ -269,11 +285,36 @@ td:not(:first-child) {
 
 /* Small Screens */
 
-/* Styles for viewports 800px or less */
-@media (max-width: 800px) {
-    .headerContents {
-      margin: 0 1em;
+.recentOutput {
+  display: none;
+}
+
+/* Styles for viewports 1200px or less */
+@media (max-width: 1200px) {
+    .leftCol {
+      max-width: 800px;
+      margin: 0 auto;
     }
+
+    .singleContent {
+    max-width: 800px;
+  }
+
+    .headerContents,
+    .footerContents {
+      width: min(100%, calc(100% - 2em));
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .rightCol {
+      display: none;
+    }
+
+    .recentOutput {
+      display: block;
+    }
+
     main {
       margin: 3em 1em 6em 1em;
     }
