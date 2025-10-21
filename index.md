@@ -147,7 +147,6 @@ Recent papers:
 * [Return of the Hidden Number Problem – A Widespread and Novel Key Extraction Attack on ECDSA and DSA](https://ches.iacr.org/2019/papers.shtm)
 * [Hardware-Backed Heist: Extracting ECDSA Keys from Qualcomm's TrustZone](https://www.nccgroup.com/us/our-research/extracting-ecdsa-keys-from-qualcomms-trustzone/)
 
-
 ## Projects
 
 Current and former members of Crypto Services have been involved in several projects:
