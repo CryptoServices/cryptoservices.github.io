@@ -25,7 +25,7 @@ Here is a selection of research publications which have been coauthored by membe
 ### 2022
 
 - [A Note on Reimplementing the Castryck-Decru Attack and Lessons Learned for SageMath](https://eprint.iacr.org/2022/1283)
-- [BAT: a Fast and Small Key Encapsulation Mechanism](https://research.nccgroup.com/2022/02/14/bat-a-fast-and-small-key-encapsulation-mechanism/)
+- [BAT: a Fast and Small Key Encapsulation Mechanism](https://www.nccgroup.com/research-blog/bat-a-fast-and-small-key-encapsulation-mechanism/)
 
 ### 2021
 
