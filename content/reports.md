@@ -7,6 +7,7 @@ Here is a selection of public reports which have been published via the NCC Grou
 
 ### 2025
 
+- [Google Private AI Compute Review](https://www.nccgroup.com/research-blog/public-report-google-private-ai-compute-review/) &dash; [Report](https://www.nccgroup.com/media/cbuhuhuu/ncc_group_google_e025353p_report_2025-11-08_v14.pdf)
 - [VetKeys Cryptography Review](https://www.nccgroup.com/research-blog/public-report-vetkeys-cryptography-review/) &dash; [Report](https://www.nccgroup.com/media/251hh3kn/ncc_group_dfinityusaresearch_vetkeys_report_2025-10-08_v10.pdf)
 - [Meta Whatsapp message summarization service](https://www.nccgroup.com/research-blog/public-report-meta-whatsapp-message-summarization-service/) &dash; [Report](https://www.nccgroup.com/media/ymskbe40/ncc_group_metaplatforms_whatsapp-message_summarization_report_2025-08-27_v10.pdf)
 - [VeChain JavaScript SDK Cryptography and Security Review](https://www.nccgroup.com/research-blog/vechain-javascript-sdk-cryptography-and-security-review/) &dash; [Report](https://www.nccgroup.com/media/ygclshpx/ncc_group_vechainfoundationsanmarinosrl_e020944_report_2025-04-10_v13.pdf)
