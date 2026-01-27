@@ -3,14 +3,22 @@ title = "Blogposts"
 layout = "single"
 +++
 
-For our most recent blogposts, see the list of posts tagged with "Cryptography" on [NCC Group's Research blog](https://www.nccgroup.com/research-blog/?category=18140) as well as our [blog archives todo](todo).
+For our most recent blogposts, see the list of posts tagged with "Cryptography" on [NCC Group's Research blog](https://www.nccgroup.com/research-blog/?category=18140) as well as the [Cryptography Services Blog Archive](/blog/) which includes additional posts written between 2014-2019.
+
+### 2025
 
 - 2025-03-10: [Announcing the Cryptopals Guided Tour Video 18: Implement CTR](https://www.nccgroup.com/research-blog/announcing-the-cryptopals-guided-tour-video-18-implement-ctr/) - [youtube.com](https://www.youtube.com/watch?v=bSfUKWF6gLo&list=PLWvDpnCcem1P6i8pZm2x7KHp5iaxwrK_P&index=18)
 - 2025-02-19: [Technical Advisory – Hash Denial-of-Service Attack in Multiple QUIC Implementations](https://www.nccgroup.com/research-blog/technical-advisory-hash-denial-of-service-attack-in-multiple-quic-implementations/)
+
+### 2024
+
 - 2024-06-07: [Real World Cryptography Conference 2024](https://www.nccgroup.com/research-blog/real-world-cryptography-conference-2024/)
 - 2024-05-24: [Cranim: A Toolkit for Cryptographic Visualization](https://www.nccgroup.com/research-blog/cranim-a-toolkit-for-cryptographic-visualization/) - [github.com](https://github.com/nccgroup/manim-cranim)
 - 2024-05-24: [Announcing the Cryptopals Guided Tour Video 17: Padding Oracles!](https://www.nccgroup.com/research-blog/announcing-the-cryptopals-guided-tour-video-17-padding-oracles/) - [youtube](https://youtu.be/6yHM19rQjDo)
 - 2024-04-08: [Technical Advisory – Ollama DNS Rebinding Attack (CVE-2024-28224)](https://www.nccgroup.com/research-blog/technical-advisory-ollama-dns-rebinding-attack-cve-2024-28224/)
+
+### 2023
+
 - 2023-09-18: [On Multiplications with Unsaturated Limbs](https://www.nccgroup.com/research-blog/on-multiplications-with-unsaturated-limbs/)
 - 2023-08-29: [SIAM AG23: Algebraic Geometry with Friends](https://www.nccgroup.com/research-blog/siam-ag23-algebraic-geometry-with-friends/)
 - 2023-08-25: [Real World Cryptography Conference 2023 – Part II](https://www.nccgroup.com/research-blog/real-world-cryptography-conference-2023-part-ii/)
@@ -30,6 +38,9 @@ For our most recent blogposts, see the list of posts tagged with "Cryptography" 
 - 2023-02-20: [A Primer On Slowable Encoders](https://www.nccgroup.com/research-blog/a-primer-on-slowable-encoders/)
 - 2023-02-03: [Machine Learning 102: Attacking Facial Authentication with Poisoned Data](https://www.nccgroup.com/research-blog/machine-learning-102-attacking-facial-authentication-with-poisoned-data/)
 - 2023-01-23: [Announcing NCC Group’s Cryptopals Guided Tour: Set 2](https://www.nccgroup.com/research-blog/announcing-ncc-group-s-cryptopals-guided-tour-set-2/)
+
+### 2022
+
 - 2022-12-15: [Machine Learning 101: The Integrity of Image (Mis)Classification?](https://www.nccgroup.com/research-blog/machine-learning-101-the-integrity-of-image-mis-classification/)
 - 2022-11-21: [A jq255 Elliptic Curve Specification, and a Retrospective](https://www.nccgroup.com/research-blog/a-jq255-elliptic-curve-specification-and-a-retrospective/)
 - 2022-09-05: [Constant-Time Data Processing At a Secret Offset, Privacy and QUIC](https://www.nccgroup.com/research-blog/constant-time-data-processing-at-a-secret-offset-privacy-and-quic/)
@@ -38,6 +49,9 @@ For our most recent blogposts, see the list of posts tagged with "Cryptography" 
 - 2022-04-26: [Real World Cryptography Conference 2022](https://www.nccgroup.com/research-blog/real-world-cryptography-conference-2022/)
 - 2022-02-07: [A deeper dive into CVE-2021-39137 – a Golang security bug that Rust would have prevented](https://www.nccgroup.com/research-blog/a-deeper-dive-into-cve-2021-39137-a-golang-security-bug-that-rust-would-have-prevented/)
 - 2022-02-03: [Estimating the Bit Security of Pairing-Friendly Curves](https://www.nccgroup.com/research-blog/estimating-the-bit-security-of-pairing-friendly-curves/)
+
+### 2021
+
 - 2021-11-18: [An Illustrated Guide to Elliptic Curve Cryptography Validation](https://www.nccgroup.com/research-blog/an-illustrated-guide-to-elliptic-curve-cryptography-validation/)
 - 2021-11-08: [Technical Advisory – Arbitrary Signature Forgery in Stark Bank ECDSA Libraries (CVE-2021-43572, CVE-2021-43570, CVE-2021-43569, CVE-2021-43568, CVE-2021-43571)](https://www.nccgroup.com/research-blog/technical-advisory-arbitrary-signature-forgery-in-stark-bank-ecdsa-libraries-cve-2021-43572-cve-2021-43570-cve-2021-43569-cve-2021-43568-cve-2021-43571/)
 - 2021-02-17: [Cryptopals: Exploiting CBC Padding Oracles](https://www.nccgroup.com/research-blog/cryptopals-exploiting-cbc-padding-oracles/)
@@ -48,6 +62,9 @@ For our most recent blogposts, see the list of posts tagged with "Cryptography" 
 - 2021-01-29: [Software Verification And Analysis Using Z3](https://www.nccgroup.com/research-blog/software-verification-and-analysis-using-z3/)
 - 2021-01-27: [Real World Cryptography Conference 2021: A Virtual Experience](https://www.nccgroup.com/research-blog/real-world-cryptography-conference-2021-a-virtual-experience/)
 - 2021-01-06: [Double-odd Elliptic Curves](https://www.nccgroup.com/research-blog/double-odd-elliptic-curves/)
+
+### 2020
+
 - 2020-09-28: [Faster Modular Inversion and Legendre Symbol, and an X25519 Speed Record](https://www.nccgroup.com/research-blog/faster-modular-inversion-and-legendre-symbol-and-an-x25519-speed-record/)
 - 2020-08-24: [Technical Advisory – wolfSSL TLS 1.3 Client Man-in-the-Middle Attack (CVE-2020-24613)](https://www.nccgroup.com/research-blog/technical-advisory-wolfssl-tls-13-client-man-in-the-middle-attack-cve-2020-24613/)
 - 2020-06-24: [Security Considerations of zk-SNARK Parameter Multi-Party Computation](https://www.nccgroup.com/research-blog/security-considerations-of-zk-snark-parameter-multi-party-computation)
@@ -62,6 +79,9 @@ For our most recent blogposts, see the list of posts tagged with "Cryptography" 
 - 2020-03-30: [Impact of DNS over HTTPS DoH on DNS Rebinding Attacks](https://www.nccgroup.com/research-blog/impact-of-dns-over-https-doh-on-dns-rebinding-attacks/)
 - 2020-03-24: [Smart Contracts Inside SGX Enclaves: Common Security Bug Patterns](https://www.nccgroup.com/research-blog/smart-contracts-inside-sgx-enclaves-common-security-bug-patterns/)
 - 2020-02-24: [Reviewing Verifiable Random Functions](https://www.nccgroup.com/research-blog/reviewing-verifiable-random-functions/)
+
+### 2019
+
 - 2019-12-20: [Passive Decryption of Ethereum P2P traffic](https://www.nccgroup.com/research-blog/passive-decryption-of-ethereum-peer-to-peer-traffic/)
 - 2019-12-19: [On Linux's RNG](https://www.nccgroup.com/research-blog/on-linux-s-random-number-generation/)
 - [Crypto-custody Solutions Open Forum Presentation](https://www.meetup.com/NCCOpenForumNYC/events/265501485/)
