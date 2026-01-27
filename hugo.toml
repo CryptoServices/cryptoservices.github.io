@@ -5,3 +5,6 @@ title = 'NCC Group | Cryptography Services'
 [markup]
   [markup.highlight]
     style = "catppuccin-mocha"
+[caches]
+  [caches.images]
+    dir = ':cacheDir/images'
