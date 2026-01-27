@@ -1,0 +1,7 @@
+baseURL = 'https://cryptoservices.github.io'
+languageCode = 'en-us'
+title = 'NCC Group | Cryptography Services'
+
+[markup]
+  [markup.highlight]
+    style = "catppuccin-mocha"

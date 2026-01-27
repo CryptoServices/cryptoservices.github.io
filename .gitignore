@@ -1,6 +1,4 @@
-_site
-.sass-cache
+old_site
+
+/public
 .DS_Store
-*~
-*#
-#*

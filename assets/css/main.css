@@ -1,0 +1,367 @@
+/* This is the font we're using on the main site */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300..800&display=swap');
+
+/* We need something for monospace, happy to have feedback on other options */
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&display=swap');
+
+:root {
+  /* Greyscale */
+  --white: #FFFFFF;
+  --grey-one: #D8D8D8;
+  --grey-two: #A0A0A0;
+  --grey-three: #3D4242;
+  --black: #0B0820;
+
+  /* Primary Colours */
+  --blue: #000FFF;
+  --blue-80: #0011ff;
+  --blue-60: #404dff;
+  --blue-40: #8088ff;
+  --blue-20: #bfc3ff;
+  --blue-10: #eaebff;
+  --blue-01: #F5F5FF;
+
+  --red-orange: #FF3B0B;
+  --red-orange-80: #ff3b0a;
+  --red-orange-60: #ff6c47;
+  --red-orange-40: #ff9d85;
+  --red-orange-20: #ffcec2;
+  --red-orange-10: #ffede9;
+  
+  /* Secondary Colours */
+  --raspberry: #FF4495;
+  --dark-lavender: #5D47D7;
+  --blue-calico: #86CDF2;  
+}
+
+body {
+  color: var(--black);
+  background-color: var(--white);
+
+  font-family: 'Open Sans', sans-serif;
+  font-optical-sizing: auto;
+
+  margin: 0;
+}
+
+main {
+  margin: 3em auto 6em auto;
+  min-height: calc(100vh - 300px)
+}
+
+  .singleContent {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+.columnWrap {
+  max-width: 1200px;
+  margin:  0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.leftCol {
+  max-width: 650px;
+}
+
+.rightCol {
+  width: 500px;
+}
+
+.mostRecentWrapper {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.seeMore {
+  text-align: right;
+  margin: 2em 0
+}
+
+.seeMoreButton {
+  display: inline;
+  background-color: var(--white);
+  padding: 7px 11px;
+  border-radius: 5px;
+  border: 2px solid var(--blue-60);
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.seeMoreButton:hover {
+  background-color: var(--blue-60);
+}
+
+.seeMore a,
+.seeMore a:hover,
+.seeMore a:visited {
+  color: var(--blue-60);
+  font-weight: bold;
+}
+
+.seeMore a:hover{
+  color: var(--white);
+  font-weight: bold;
+  transition: color ease 0.3;
+}
+
+a,
+a:visited {
+  color: var(--blue);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--blue-60);
+}
+
+code, pre {
+  font-family: "Google Sans Code", monospace;
+  font-optical-sizing: auto;
+}
+
+p code {
+  font-size: 0.98;
+  background-color: var(--red-orange-10);
+  color: var(--red-orange);
+  padding: 2px 5px;
+  border-radius: 3px;
+}
+
+pre {
+  font-size: 0.85em;
+  padding: 1em;
+  border-radius: 4px;
+}
+
+header {
+  border-bottom: 2px solid var(--grey-one);
+  margin-bottom: 1rem;
+}
+
+.headerContents {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2em 0;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.headerContents .leftHeader img {
+  width: 150px
+}
+
+.rightHeader {
+  font-weight: bold;
+  font-size: 1.5em;
+  text-align: right;
+}
+
+footer {
+  background: linear-gradient(var(--blue), var(--black));
+  color: var(--white);
+  min-height: 150px;
+}
+
+.footerContents {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2em 0;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footerContents .leftFooter img {
+  width: 150px
+}
+
+.rightFooter {
+  text-align: left;
+  max-width: 400px;
+  font-size: 0.85em;
+}
+
+.blogPost {
+  max-width: 800px;
+  margin: 3em auto 8em auto;
+}
+
+.blogPostYear{
+  text-align: right;
+  margin-top: 3em;
+  margin-bottom: 0;
+}
+
+.blogPostYearHr {
+  border: none;
+  height: 2px;
+  background: linear-gradient(to left, var(--red-orange), var(--white));
+  margin-bottom: 1em;
+}
+
+.blogPost ul {
+  line-height: 1.6;
+}
+
+.metaData .authorName {
+  font-weight: bold;
+}
+
+.metaData time {
+  color: var(--grey-three);
+  font-family: "Google Sans Code", monospace;
+}
+
+.blogPost .metaData hr {
+  height: 2px;
+  border: none;
+  background: linear-gradient(to right, var(--red-orange), var(--white));
+  margin: 1em 0 2.5em 0;
+}
+
+.blogPost img {
+  max-width: 100%;
+}
+
+.blogPost p {
+  line-height: 1.4em;
+}
+
+.blogPost p:has(> img:only-child),
+.blogPost p:has(> img:first-child:last-child) { /* older browsers may not support :has */
+  text-align: center;
+}
+
+.blogPost blockquote {
+  margin-left: 1em;
+  padding-left: 1em;
+  color: var(--grey-three);
+
+  border-style: solid;
+  border-width: 0 0 0 4px;
+  border-image: linear-gradient(to bottom, var(--blue), var(--white)) 1;
+
+}
+
+.blogPost hr {
+  height: 2px;
+  border: none;
+  background: linear-gradient(to right, var(--grey-two), var(--grey-one));
+}
+
+hr.mainHr {
+  margin: 3em 0;
+  height: 2px;
+  border: none;
+  background: linear-gradient(to right, var(--white), var(--red-orange), var(--white));
+}
+
+
+/* Table design */
+
+.blogPost table {
+  margin: 0 auto;
+}
+
+table {
+  min-width: 90%;
+  margin: 20px 0;
+  border-collapse: collapse;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+th {
+  background-color: var(--blue);
+  color: white;
+  padding: 0.8em; 
+  text-align: center;
+  font-weight: bold;
+}
+
+td {
+  background-color: var;
+  padding: 0.8em; 
+  border-bottom: 1px solid var(--grey-two);
+}
+
+tr:hover td {
+  background-color: var(--blue-10);
+}
+
+tr:nth-child(odd) {
+  background-color: var(--blue-01);
+}
+
+tr:last-child td {
+  border-bottom: none;
+}
+
+td:first-child {
+    text-align: left;
+}
+
+td:not(:first-child) {
+    text-align: center;
+}
+
+@media (max-width: 600px) {
+  table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+}
+
+/* Small Screens */
+
+.recentOutput {
+  display: none;
+}
+
+/* Styles for viewports 1200px or less */
+@media (max-width: 1200px) {
+    .leftCol {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .singleContent {
+    max-width: 800px;
+  }
+
+    .headerContents,
+    .footerContents {
+      width: min(100%, calc(100% - 2em));
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .rightCol {
+      display: none;
+    }
+
+    .recentOutput {
+      display: block;
+    }
+
+    main {
+      margin: 3em 1em 6em 1em;
+    }
+
+    .footerContents {
+      flex-direction: column;
+      padding: 2em 12px;
+    }
+
+    .rightFooter {
+      margin-top: 2em;
+    }
+}
