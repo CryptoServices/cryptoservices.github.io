@@ -209,6 +209,10 @@ footer {
   line-height: 1.6;
 }
 
+.blogPost a {
+  word-break: break-all;
+}
+
 .metaData .authorName {
   font-weight: bold;
 }
@@ -318,6 +322,10 @@ td:not(:first-child) {
     overflow-x: auto;
     white-space: nowrap;
   }
+}
+
+.highlight pre {
+  overflow-x: scroll;
 }
 
 /* Small Screens */
