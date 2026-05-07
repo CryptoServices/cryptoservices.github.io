@@ -5,6 +5,10 @@ layout = "single"
 
 Here is a selection of research publications which have been coauthored by members of the Cryptographic Services team
 
+### 2026
+
+- [Montgomery Multiplication in Signed Redundant Representations](https://eprint.iacr.org/2026/780)
+
 ### 2025
 
 - [Simpler and Faster Pairings from the Montgomery Ladder](https://eprint.iacr.org/2025/672)
