@@ -5,6 +5,10 @@ layout = "single"
 
 Here is a selection of public reports which have been published via the NCC Group research blog.
 
+### 2026
+
+- [Go x/crypto/ssh Cryptographic Implementation Review](https://www.nccgroup.com/research/public-report-go-xcryptossh-cryptographic-implementation-review/) &dash; [Report](https://www.nccgroup.com/media/lu1jlfli/ncc_group_go_-xcryptossh-cryptographic_report_.pdf)
+
 ### 2025
 
 - [Google Private AI Compute Review](https://www.nccgroup.com/research-blog/public-report-google-private-ai-compute-review/) &dash; [Report](https://www.nccgroup.com/media/cbuhuhuu/ncc_group_google_e025353p_report_2025-11-08_v14.pdf)
