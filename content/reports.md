@@ -8,6 +8,7 @@ Here is a selection of public reports which have been published via the NCC Grou
 ### 2026
 
 - [Go x/crypto/ssh Cryptographic Implementation Review](https://www.nccgroup.com/research/public-report-go-xcryptossh-cryptographic-implementation-review/) &dash; [Report](https://www.nccgroup.com/media/lu1jlfli/ncc_group_go_-xcryptossh-cryptographic_report_.pdf)
+- [BLS (Boneh-Lynn-Shacham) Signatures Implementation Review](https://www.nccgroup.com/research/bls-boneh-lynn-shacham-signatures-implementation-review/) &dash; [Report](https://www.nccgroup.com/media/lcnd0iiz/ncc_group_anzatechnology_e032961_report_2026-06-04_v10.pdf)
 
 ### 2025
 
