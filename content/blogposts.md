@@ -5,6 +5,10 @@ layout = "single"
 
 For our most recent blogposts, see the list of posts tagged with "Cryptography" on [NCC Group's Research blog](https://www.nccgroup.com/research-blog/?category=18140) as well as the [Cryptography Services Blog Archive](/blog/) which includes additional posts written between 2014-2019.
 
+### 2026
+
+- 2026-10-06: [A String Theorist's Guide to Implementing MIKE](https://www.nccgroup.com/research/a-string-theorists-guide-to-implementing-mike/)
+
 ### 2025
 
 - 2025-03-10: [Announcing the Cryptopals Guided Tour Video 18: Implement CTR](https://www.nccgroup.com/research-blog/announcing-the-cryptopals-guided-tour-video-18-implement-ctr/) - [youtube.com](https://www.youtube.com/watch?v=bSfUKWF6gLo&list=PLWvDpnCcem1P6i8pZm2x7KHp5iaxwrK_P&index=18)
